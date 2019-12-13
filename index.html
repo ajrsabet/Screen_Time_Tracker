@@ -4,34 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+                  
+    <title>Screen Time Tracker</title>
+    <link rel="stylesheet" href="materialize/css/materialize.css">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <title>Screen Time Tracker</title>
 </head>
 <body>
-        <script src="https://api.unsplash.com/"></script>
-        <script type="text/javascript"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
-        <div class="image">
 
-        </div>
+        
 
-<script>
-    $(document).ready(function () {
-  //your code here
-  var queryURL = "https://api.unsplash.com/photos/?client_id=e95ecaea5f2f22854ddc21c0f047145e88a13a1759d8a88737ec5affafc9ead4&" + "/photos/random"
-  
-  $.ajax({
-      url: queryURL,
-      method: "GET"
-      
-    }).then(function(response) {
-        var imageDiv = $(".image");
-        var image = $(response[0].urls.regular);
 
-        imageDiv.append(image);
-    });
-});
-    </script>
-
+    <script src="https://api.unsplash.com/"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="materialize/js/materialize.js"></script>
+    <script src="materialize/js/materialize.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -16,3 +16,66 @@
     text-align: center;
 }
 
+#spanCircle {
+    display: block;
+    height: 30vh;
+    width: 30vh;
+    line-height: 30vh;
+    color: black;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2em;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 20vh;
+}
+#spanCircleParrent {
+    display: block;
+    height: 30vh;
+    width: 30vh;
+    line-height: 30vh;
+    color: black;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2em;
+    justify-content: left;
+    margin: 0 auto;
+}
+#spanCircleKid1 {
+    display: block;
+    height: 30vh;
+    width: 30vh;
+    line-height: 30vh;
+    color: black;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2em;
+    justify-content: center;
+    margin: 0 auto;
+}
+#spanCircleKid2 {
+    display: block;
+    height: 30vh;
+    width: 30vh;
+    line-height: 30vh;
+    color: black;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2em;
+    justify-content: right;
+    margin: 0 auto;
+}
+#mainslogan{
+    margin-top: 15vh;
+    text-align: center;
+}
+#homepageKids{
+    margin-top: 40vh;
+}
+.homepageEmptySpace{
+    height: 30vh;
+}

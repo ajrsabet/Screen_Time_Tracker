@@ -16,6 +16,21 @@
     text-align: center;
 }
 
+    
+#money-icon {
+    text-align: center;
+    color: grey;
+}
+#time-icon {
+    text-align: center;
+    color: grey;
+}
+.you-tube {
+    text-align: center;
+    margin: 0 auto;
+}
+
+
 #spanCircle {
     display: block;
     height: 30vh;

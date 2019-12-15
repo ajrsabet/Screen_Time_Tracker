@@ -109,6 +109,30 @@ $(".payKid1Btn").on("click", function () {
 
 /////////////////// Kids page /////////////////
 // TODO: Edit/customize styles LH
+
+    // insert class for saveBtn
+    // var saveBtn = $("");
+// saveBtn.on("click", function (){
+    // insert value for name text box
+    // var name = $("");
+    // insert value for age text box
+    // var age = $("");
+    // insert value for background input
+    
+    var searchInput = "dogs"; 
+    var queryURL = "https://api.unsplash.com/?query=" + searchInput + "&client_id=e95ecaea5f2f22854ddc21c0f047145e88a13a1759d8a88737ec5affafc9ead4";
+
+  $.ajax({
+    allRoutes: true,
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+    
+  });
+// });
+
+
 ///// TODO: modal popout 
 
 //  Start/stop time AJS
@@ -164,6 +188,46 @@ function stopTimer() {
 
 
 //// TODO: API Youtube LH
+ // 2. This code loads the IFrame Player API code asynchronously.
+ var tag = document.createElement('script');
+
+ tag.src = "https://www.youtube.com/iframe_api";
+ var firstScriptTag = document.getElementsByTagName('script')[0];
+ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+ // 3. This function creates an <iframe> (and YouTube player)
+ //    after the API code downloads.
+ var player;
+ function onYouTubeIframeAPIReady() {
+   player = new YT.Player('player', {
+     height: '390',
+     width: '640',
+     videoId: '_UVhAWP83TM',
+     events: {
+       'onReady': onPlayerReady,
+       'onStateChange': onPlayerStateChange
+     }
+   });
+ }
+
+ // 4. The API will call this function when the video player is ready.
+ function onPlayerReady(event) {
+   event.target.playVideo();
+ }
+
+ // 5. The API calls this function when the player's state changes.
+ //    The function indicates that when playing a video (state=1),
+ //    the player should play for six seconds and then stop.
+ var done = false;
+ function onPlayerStateChange(event) {
+   if (event.data == YT.PlayerState.PLAYING && !done) {
+     // setTimeout(stopVideo, 6000);
+     done = true;
+   }
+ }
+ function stopVideo() {
+   player.stopVideo();
+ }
 ////// TODO: MVP static video URL request
 ////// TODO: MDP dynamic search 
 

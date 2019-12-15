@@ -26,59 +26,73 @@
   </div>
 
   <!-- Body -->
-
   <body>
-
+  
     <div class="container">
-        <!-- Background Imge -->
-        <div class="-kid-background-image"></div>
-      <div class="row">
-        <!-- Kid circle Icon thing -->
-        <div class="col s12 center-align">
-          <div class="circle-name-icon"></div>
-          <i class="large material-icons">account_circle</i>
+      <!-- need to make this "edit" button take you to form.html when clicked -->
+        <a class="btn-floating btn-large cyan pulse right-align"><i class="material-icons">edit</i></a>
+      <!-- Background Imge -->
+      <div class="-kid-background-image"></div>
+      <div class="row statsTopSpacing">
+        <div class="col s2">
         </div>
+      </div>
+      <!-- Kid circle Icon thing -->
+      <span class="deep-purple lighten-3 spanCircleKid1">Kid</span>
+      <div class="row statsTopSpacing">
+          <div class="col s2">
+          </div>
+        </div>
+      <div class="row">
         <!-- Dollar icon -->
-        <div><i class="col s2 medium material-icons center-align" id="money-icon">attach_money</i></div>
+        <div><i class="col s2 medium material-icons right-align" id="money-icon">attach_money</i></div>
         <!-- Actual Money Input --- NEED TO PULL FROM JavaScript -->
-        <div class="col s2 left-align">Sample $5.00</div>
+        <span class="col s8 green accent-2 OvalBar center-align"><h5>Placeholder money</h5></span>
         <!-- Remove BUTTON icon ---NEEED TO MAKE IT A CLICKABLE BUTTON IN JavaScript -->
-        <div><i class="col s2 medium material-icons center-align">remove_circle_icon</i></div>
+        <div><i class="col s1 medium material-icons center-align">add_circle_icon</i></div>
+        <div><i class="col s1 medium material-icons center-align">shopping_cart</i></div>
+      </div>
+      <div class="row">
         <!-- Time icon -->
         <div><i class="col s2 medium material-icons center-align" id="time-icon">access_alarm</i></div>
         <!-- Actual Time Input --- NEED TO PULL FROM JavaScript -->
-        <div class="col s2 left-align">Sample 45min</div>
+        <span class="col s8 green accent-2 OvalBar center-align"><h5>Placeholder time</h5></span>
         <!-- Remove BUTTON icon ---NEEED TO MAKE IT A CLICKABLE BUTTON IN JavaScript -->
-        <div><i class="col s2 medium material-icons center-align">remove_circle_icon</i></div>
+        <div><i class="col s1 medium material-icons center-align">add_circle_icon</i></div>
+        <div><i class="col s1 medium material-icons">play_circle_outline</i></div>
       </div>
       <!-- search box for youtube -->
-      <div class="row">
+      <form>
         <div class="row">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s6 center-align">
-                <input id="input_text" type="text" data-length="10">
-                <label for="input_text">Input text</label>
-              </div>
-            </div>
-          </form>
+          <div class="input-field col s12 center-align">
+            <input id="input_text" type="text" data-length="10">
+            <label for="input_text center-align">Search for a fun video to watch!</label>
+          </div>
         </div>
-        <!-- youtube --NEED TO ADD FUNCTIONALITY WITH JavaScript-->
-        <div class="you-tube">youtube placeholder</div>
-        <!-- play icon for youtube -- NEEDS TO WORK USING Javascript-->
-        <div><i class="col s12 center-align large material-icons">play_circle_outline</i></div>
-
+      </form>
+      <!-- youtube --NEED TO ADD FUNCTIONALITY WITH JavaScript-->
+      <div class="you-tube">youtube placeholder</div>
+      <div class="col s8">
+        <!-------------- first chart goes here -->
+            <div class="video-container">
+                <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
+              </div>
+        <!------------------- ends here -->
       </div>
     </div>
-</body>
-
-
-
-
-
-
-
-    <!-- Footer -->
+    <!-- play icon for youtube -- NEEDS TO WORK USING Javascript-->
+    <div class="col s8">
+      <!-------------- first chart goes here -->
+      
+      <!------------------- ends here -->
+    </div>
+    <!-- bottom spacing -->
+    <div class="col s2">
+    </div>
+    <div class="row statsBottomSpacing">
+    </div>
+    <br>
+    <!-- footer  -->
     <div id="footer">
       <p>© 2019 Copyright</p>
     </div>
@@ -89,7 +103,16 @@
     <script src="materialize/js/materialize.js"></script>
     <script src="materialize/js/materialize.min.js"></script>
     <script src="script.js"></script>
-
   </body>
+
+
+  <script src="https://api.unsplash.com/"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="materialize/js/materialize.js"></script>
+  <script src="materialize/js/materialize.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
 
 </html>

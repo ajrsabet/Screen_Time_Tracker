@@ -8,9 +8,28 @@
 
 /////////////////// Stats/parents portal /////////////////
 // TODO: View kids balances AJS
-//// TODO: Pull local storage 
-var kid1Ballance;
-var kid2Ballance;
+// Pull kid balance from local storage 
+var kid1ScreenBal = 60;
+var kid1Allowence = .10;
+var kid1MonBal = kid1ScreenBal * kid1Allowence;
+
+if (localStorage.getItem("kid1ScreenBal") !== null) {
+	console.log("get screenBal");
+	
+	kid1ScreenBal = JSON.parse(localStorage.getItem("kid1ScreenBal"));
+console.log(kid1MoneyHist);
+
+}
+
+// localStorage.setItem("kid1ScreenBal", (180))
+
+function refreshBallances () {
+	$('#kid1ScreenBal').html("Screen Balance: " + kid1ScreenBal + " minutes");
+	$('#kid1Allowence').html("Allowence Rate: $" + kid1Allowence*60 + "/hour");
+	$('#kid1MonBal').html("Available Money: $" + kid1MonBal);
+}
+
+
 // TODO: View graph/history 
 //// moment.js
 
@@ -30,32 +49,38 @@ var date = moment("12/25/1995", "MM-DD-YYYY");
 var kid1MoneyHist = [];
 var kid2MoneyHist = [];
 
+// get kid1MoneyHist from local storage
 if (localStorage.getItem("kid1MoneyHist") !== null) {
-	kid1MoneyHist = localStorage.getItem("kid1MoneyHist");
-	// console.log((kid1MoneyHist));
+	kid1MoneyHist = JSON.parse(localStorage.getItem("kid1MoneyHist"));
 }
 
-// 
+// pay kid to update pay history 
 $(".payKid1Btn").on("click", function () {
+	// Check if date already exists in history
 	if (kid1MoneyHist.includes(moment().format('YYYYMMDD')) === true) {
-		// console.log("Date already in array");
-		// console.log(kid1MoneyHist);
+		// Get current date index from history
 		var indexDate = kid1MoneyHist.indexOf(moment().format('YYYYMMDD'));
-				
-		kid1MoneyHist.splice(indexDate + 1,1, JSON.stringify(parseInt(kid1MoneyHist[indexDate + 1]) + JSON.parse($(this).prev().val())));
-		
+
+		// Add new value to existing value
+		kid1MoneyHist.splice(indexDate + 1, 1, JSON.stringify(parseInt(kid1MoneyHist[indexDate + 1]) + JSON.parse($(this).prev().val())));
+
+		// Commit new value to storage
 		localStorage.setItem("kid1MoneyHist", JSON.stringify(kid1MoneyHist))
-		
-		// console.log(kid1MoneyHist);
 
 	} else {
-		// console.log("not in array");
+		// If date is not in history, add new date and value
 		kid1MoneyHist.push(moment().format('YYYYMMDD'));
 		kid1MoneyHist.push($(this).prev().val());
-		// console.log(kid1MoneyHist);
+		// Commit new value to storage
 		localStorage.setItem("kid1MoneyHist", JSON.stringify(kid1MoneyHist))
 	}
 
+	// Update kid1ScreenBal
+	kid1ScreenBal = kid1ScreenBal - (JSON.parse($(this).prev().val()) / kid1Allowence );
+	
+	localStorage.setItem("kid1ScreenBal", JSON.stringify(kid1ScreenBal))
+
+	refreshBallances();
 });
 
 
@@ -85,10 +110,7 @@ $(".payKid1Btn").on("click", function () {
 var kid1MoneyRequest;
 var kid2MoneyRequest;
 
-if (localStorage.getItem("kid1MoneyHist") !== null) {
-	kid1MoneyHist = JSON.parse(localStorage.getItem("kid1MoneyHist"));
-	console.log((kid1MoneyHist));
-}
+
 
 $(".kid1MoneyRequestBtn").click(function () {
 	kid1MoneyRequest = $(this).prev().val();
@@ -114,3 +136,5 @@ var kid2Info = ("name", "age")
 
 // TODO: Change background LH
 //// TODO: API unsplash
+
+refreshBallances();

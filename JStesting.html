@@ -18,38 +18,46 @@
 
     <h1>Adam's Testing Page</h1>
 
-    <div id="clock"></div>
+    <div class="clock"></div>
 
 
-<h5 id="kid1ScreenBal"></h5>
-<h5 id="kid1Allowence"></h5>
-<h5 id="kid1MonBal"></h5>
+    <h5 class="kid1ScreenBal"></h5>
+    <h5 class="kid1Allowence"></h5>
+    <h5 class="kid1MonBal"></h5>
+    <h5 class="kid1MonReqst"></h5>
 
 
- 
 
-    <!-- KID1 money request button test -->
+    
+    <!-- KID1 pay button test -->
     <div class="input-field col s12">
-        <textarea id="textarea1" class="materialize-textarea"></textarea>
-        <a class="waves-effect waves-light btn payKid1Btn">Kid1 Pay Request</a>
-        <label for="textarea1">Kid1 Pay Request</label>
-    </div>
-
-
-<!-- KID1 pay button test -->
-    <div class="input-field col s12">
-        <textarea id="textarea1" class="materialize-textarea"></textarea>
+        <textarea id="textarea1" class="materialize-textarea kid1MonReqstBtn"></textarea>
         <a class="waves-effect waves-light btn payKid1Btn">Pay Kid1</a>
         <label for="textarea1">Pay Kid1</label>
     </div>
 
+    <!-- KID1 money request button test -->
+    <div class="input-field col s12">
+        <textarea id="textarea1" class="materialize-textarea"></textarea>
+        <a class="waves-effect waves-light btn kid1MonReqstBtn">Kid1 Money Request</a>
+        <label for="textarea1">Kid1 Money Request</label>
+    </div>
 
-<!-- KID1 pay request -->
-<div class="input-field col s12">
-    <textarea id="textarea1" class="materialize-textarea"></textarea>
-    <a class="waves-effect waves-light btn payKid1Btn">Screen Kid1</a>
-    <label for="textarea1">Screen Kid1</label>
-</div>
+    <!-- KID1 Add/subtract time button test -->
+    <div class="input-field col s12">
+        <textarea id="textarea1" class="materialize-textarea kid1MonReqstBtn"></textarea>
+        <a class="waves-effect waves-light btn payKid1Btn">Add/deduct amount</a>
+        <a class="waves-effect waves-light btn payKid1Btn">Add 15 minutes</a>
+        <a class="waves-effect waves-light btn payKid1Btn">Deduct 15 minutes</a>
+        <label for="textarea1">Pay Kid1</label>
+    </div>
+
+
+    <!-- KID1 screen time -->
+    <div class="input-field col s12">
+        <a class="waves-effect waves-light btn playPause">Play/Pause</a>
+    </div>
+    <h5 class="kid1ScreenBal">Loading...</h5>
 
 
 

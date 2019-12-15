@@ -2,25 +2,87 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="materialize/css/materialize.css">
-    <link rel="stylesheet" href="materialize/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="id.css">
-    <title>Parent Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="materialize/css/materialize.css" />
+  <link rel="stylesheet" href="materialize/css/materialize.min.css" />
+  <link rel="stylesheet" href="id.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Stats Page</title>
 </head>
 
 <body>
+  <div class="container-fluid">
+    <nav id="transparentBG">
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo" id="black">KidsTime</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="sass.htm" id="black">contact(if we can)</a></li>
+        </ul>
+      </div>
+    </nav>
 
 
+    <body>
+      <div class="container">
 
-    <i class="small material-icons">access_alarm</i>
-    <i class="small material-icons">attach_money</i>
-    <i class="small material-icons">add</i>
+        <div class="row statsTopSpacing">
+          <div class="col s2">
+          </div>
+          <div class="col s4">
+            <span class="light-green lighten-2 spanCircleKid1">Kid 1</span>
+            <span class="green accent-2 spanOvalBar">Placeholder money</span>
+            <span class="green accent-2 spanOvalBar">Placeholder time</span>
 
-    <div id="footer">
+          </div>
+          <div class="col s4">
+            <span class="deep-purple lighten-3 spanCircleKid2">Kid 2</span>
+            <span class="green accent-2 spanOvalBar">Placeholder money</span>
+            <span class="green accent-2 spanOvalBar">Placeholder time</span>
+
+          </div>
+          <div class="col s2">
+          </div>
+
+        </div>
+        <div class="row statsMiddleSpacing">
+          <div class="col s2">
+          </div>
+
+          <div class="col s8">
+            <!-------------- first chart goes here -->
+            <div id="CHANGE_ME">
+            </div>
+            <!------------------- ends here -->
+          </div>
+
+          <div class="col s2">
+          </div>
+        </div>
+
+        <div class="row statsMiddleSpacing">
+          <div class="col s2">
+          </div>
+
+          <div class="col s8">
+            <!-------------- first chart goes here -->
+            <div id="CHANGE_ME">
+            </div>
+            <!------------------- ends here -->
+          </div>
+
+          <div class="col s2">
+          </div>
+        </div>
+
+        <div class="row statsBottomSpacing">
+        </div>
+
+      </div>
+      <br>
+
+      <div id="footer">
         <p>© 2019 Copyright</p>
     </div>
 
@@ -31,5 +93,15 @@
     <script src="materialize/js/materialize.min.js"></script>
     <script src="script.js"></script>
 </body>
+      </div>
+
+      <script src="https://api.unsplash.com/"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="materialize/js/materialize.js"></script>
+      <script src="materialize/js/materialize.min.js"></script>
+      <script src="script.js"></script>
+
+    </body>
+
 
 </html>

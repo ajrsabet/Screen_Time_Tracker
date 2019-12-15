@@ -3424,10 +3424,12 @@ table span.badge {
 
 /* This is needed for some mobile phones to display the Google Icon font properly */
 .material-icons {
+  color: #0091ea;
   text-rendering: optimizeLegibility;
   -webkit-font-feature-settings: 'liga';
      -moz-font-feature-settings: 'liga';
           font-feature-settings: 'liga';
+          
 }
 
 .container {
@@ -6647,7 +6649,7 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
 .input-field input[type=search]:focus:not(.browser-default) + label i,
 .input-field input[type=search]:focus:not(.browser-default) ~ .mdi-navigation-close,
 .input-field input[type=search]:focus:not(.browser-default) ~ .material-icons {
-  color: #444;
+  color: rgb(109, 109, 109);
 }
 
 .input-field input[type=search] + .label-icon {

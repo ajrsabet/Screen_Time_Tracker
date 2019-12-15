@@ -2,24 +2,85 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="materialize/css/materialize.css">
-    <link rel="stylesheet" href="materialize/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="id.css">
-    <title>Kid Profile</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="materialize/css/materialize.css" />
+  <link rel="stylesheet" href="materialize/css/materialize.min.css" />
+  <link rel="stylesheet" href="id.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Kid Profile</title>
 </head>
 
 <body>
+  <!-- Navbar -->
+  <div class="container-fluid">
+    <nav id="transparentBG">
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo" id="black">KidsTime</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="sass.htm" id="black">contact(if we can)</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
-    <i class="small material-icons">access_alarm</i>
-    <i class="small material-icons">attach_money</i>
-    <i class="small material-icons">add</i>
+  <!-- Body -->
 
+  <body>
+
+    <div class="container">
+        <!-- Background Imge -->
+        <div class="-kid-background-image"></div>
+      <div class="row">
+        <!-- Kid circle Icon thing -->
+        <div class="col s12 center-align">
+          <div class="circle-name-icon"></div>
+          <i class="large material-icons">account_circle</i>
+        </div>
+        <!-- Dollar icon -->
+        <div><i class="col s2 medium material-icons center-align" id="money-icon">attach_money</i></div>
+        <!-- Actual Money Input --- NEED TO PULL FROM JavaScript -->
+        <div class="col s2 left-align">Sample $5.00</div>
+        <!-- Remove BUTTON icon ---NEEED TO MAKE IT A CLICKABLE BUTTON IN JavaScript -->
+        <div><i class="col s2 medium material-icons center-align">remove_circle_icon</i></div>
+        <!-- Time icon -->
+        <div><i class="col s2 medium material-icons center-align" id="time-icon">access_alarm</i></div>
+        <!-- Actual Time Input --- NEED TO PULL FROM JavaScript -->
+        <div class="col s2 left-align">Sample 45min</div>
+        <!-- Remove BUTTON icon ---NEEED TO MAKE IT A CLICKABLE BUTTON IN JavaScript -->
+        <div><i class="col s2 medium material-icons center-align">remove_circle_icon</i></div>
+      </div>
+      <!-- search box for youtube -->
+      <div class="row">
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6 center-align">
+                <input id="input_text" type="text" data-length="10">
+                <label for="input_text">Input text</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- youtube --NEED TO ADD FUNCTIONALITY WITH JavaScript-->
+        <div class="you-tube">youtube placeholder</div>
+        <!-- play icon for youtube -- NEEDS TO WORK USING Javascript-->
+        <div><i class="col s12 center-align large material-icons">play_circle_outline</i></div>
+
+      </div>
+    </div>
+</body>
+
+
+
+
+
+
+
+    <!-- Footer -->
     <div id="footer">
-        <p>© 2019 Copyright</p>
+      <p>© 2019 Copyright</p>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
@@ -28,6 +89,7 @@
     <script src="materialize/js/materialize.js"></script>
     <script src="materialize/js/materialize.min.js"></script>
     <script src="script.js"></script>
-</body>
+
+  </body>
 
 </html>

@@ -1,3 +1,8 @@
+#CHANGE_ME{
+border:solid red 1px;
+height: 200px;
+width: 100%;
+}
 
 #black{
     color: black;
@@ -43,7 +48,7 @@
     margin: 0 auto;
     margin-top: 20vh;
 }
-#spanCircleParrent {
+.spanCircleParrent {
     display: block;
     height: 30vh;
     width: 30vh;
@@ -53,10 +58,9 @@
     border-radius: 50%;
     text-align: center;
     font-size: 2em;
-    justify-content: left;
     margin: 0 auto;
 }
-#spanCircleKid1 {
+.spanCircleKid1 {
     display: block;
     height: 30vh;
     width: 30vh;
@@ -66,10 +70,9 @@
     border-radius: 50%;
     text-align: center;
     font-size: 2em;
-    justify-content: center;
     margin: 0 auto;
 }
-#spanCircleKid2 {
+.spanCircleKid2 {
     display: block;
     height: 30vh;
     width: 30vh;
@@ -79,9 +82,9 @@
     border-radius: 50%;
     text-align: center;
     font-size: 2em;
-    justify-content: right;
     margin: 0 auto;
 }
+
 #mainslogan{
     margin-top: 15vh;
     text-align: center;
@@ -91,4 +94,23 @@
 }
 .homepageEmptySpace{
     height: 30vh;
+}
+.statsTopSpacing{
+    margin-top: 10vh;
+}
+.statsMiddleSpacing{
+    margin-top: 12vh;
+}
+.statsBottomSpacing{
+    height: 15vh;
+}
+.spanOvalBar{
+    display: block;
+    border-radius: 25px;
+    padding: 15px;
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 10vh;
+    text-align: center;
 }

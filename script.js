@@ -31,6 +31,30 @@ var kid2ScreenHist = [15,35,180,];
 
 /////////////////// Kids page /////////////////
 // TODO: Edit/customize styles LH
+
+    // insert class for saveBtn
+    // var saveBtn = $("");
+// saveBtn.on("click", function (){
+    // insert value for name text box
+    // var name = $("");
+    // insert value for age text box
+    // var age = $("");
+    // insert value for background input
+    
+    var searchInput = "dogs"; 
+    var queryURL = "https://api.unsplash.com/?query=" + searchInput + "&client_id=e95ecaea5f2f22854ddc21c0f047145e88a13a1759d8a88737ec5affafc9ead4";
+
+  $.ajax({
+    allRoutes: true,
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+    
+  });
+// });
+
+
 ///// TODO: modal popout 
 
 // TODO: Start/stop time AJS

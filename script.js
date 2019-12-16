@@ -14,6 +14,20 @@ var kid1MonReqst = 0;
 var kid1MoneyHist = [];
 var kid1Info = ("name", "age")
 
+//////////////// Testing object array for MDP ////////////////////
+// var kidArr = [
+
+// 	{ name : "",
+// 		age : "" ,
+// 		screenBal : 60,
+// 		 allowence : .10,
+// 		 monBal : 0.00,
+// 		 monReqst : 0,
+// 		 moneyHist : [],
+// 		 moneyDate : [],
+// 		}
+// ]
+
 ////////////////// Retrieve local storage /////////////
 // Pull Screen balance from local storage
 if (localStorage.getItem("kid1ScreenBal") !== null) {
@@ -52,7 +66,7 @@ function refreshBallances() {
 	localStorage.setItem("kid1MonReqst", kid1MonReqst);
 
 	// Local storage set money withdrawal history. if working, delete in 4 locations within functions
-	// localStorage.setItem("kid1MoneyHist", JSON.stringify(kid1MoneyHist))
+	localStorage.setItem("kid1MoneyHist", JSON.stringify(kid1MoneyHist))
 }
 
 
@@ -91,7 +105,7 @@ $(".payKid1Btn").on("click", function () {
 			// Reduce available balance
 			kid1ScreenBal = (kid1ScreenBal - (JSON.parse($(this).prev().val())) / kid1Allowence)
 			// Commit new value to storage
-			localStorage.setItem("kid1MoneyHist", JSON.stringify(kid1MoneyHist))
+			// localStorage.setItem("kid1MoneyHist", JSON.stringify(kid1MoneyHist))
 		} else {
 			// If date is not in history, add new date and value
 			kid1MoneyHist.push(moment().format('YYYYMMDD'));
@@ -101,7 +115,7 @@ $(".payKid1Btn").on("click", function () {
 			kid1ScreenBal = (kid1ScreenBal - (JSON.parse($(this).prev().val())) / kid1Allowence)
 
 			// Commit new value to storage
-			localStorage.setItem("kid1MoneyHist", JSON.stringify(kid1MoneyHist))
+			// localStorage.setItem("kid1MoneyHist", JSON.stringify(kid1MoneyHist))
 		}
 
 		// Update kid1ScreenBal
@@ -128,12 +142,12 @@ $(".payKid1AllBtn").on("click", function () {
 			// Add new value to existing value
 			kid1MoneyHist.splice(indexDate + 1, 1, JSON.stringify(parseInt(kid1MoneyHist[indexDate + 1]) + kid1MonBal));
 
-			localStorage.setItem("kid1MoneyHist", JSON.stringify(kid1MoneyHist))
+			// localStorage.setItem("kid1MoneyHist", JSON.stringify(kid1MoneyHist))
 		} else {
 			// If date is not in history, add new date and value
 			kid1MoneyHist.push(moment().format('YYYYMMDD'));
 			kid1MoneyHist.push(kid1MonBal);
-			localStorage.setItem("kid1MoneyHist", JSON.stringify(kid1MoneyHist))
+			// localStorage.setItem("kid1MoneyHist", JSON.stringify(kid1MoneyHist))
 		}
 
 		// Update kid1ScreenBal

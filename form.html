@@ -46,13 +46,15 @@
     <div class="container">
       <div class="row">
         <!-- Name Input  -->
-        <div class="input-field col s6">
+       
+        <div class="input-field col s6 green accent-2 SpanOval3">
           <i class="material-icons prefix">account_circle</i>
           <input id="icon_prefix" type="text" class="validate">
           <label for="icon_prefix">First Name</label>
         </div>
+      
         <!-- Background image search input field  -->
-        <div class="input-field col s6">
+        <div class="input-field col s6 green accent-2 SpanOval3">
           <i class="material-icons prefix">beach_access</i>
           <input id="icon_prefix" type="text" class="validate">
           <label for="icon_prefix">Favorite thing in the whole world</label>
@@ -74,7 +76,7 @@
         <div class="input-field col s5">
           <form action="#">
             <p class="range-field">
-              <input type="range" id="test5" min="0" max="18" />
+              <input type="range" id="test5" min="0" max="18">
             </p>
           </form>
         </div>
@@ -84,7 +86,7 @@
         <div class="col s2"></div>
         <div class="col s4">
           <!-- Dropdown Trigger -->
-          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Pick a color</a>
+          <a class='dropdown-trigger btn green accent-2 black-text' href='#' data-target='dropdown1'>Pick a color</a>
           <!-- Dropdown Structure -->
           <ul id='dropdown1' class='dropdown-content'>
             <li><a href="#!">Pink</a></li>
@@ -93,24 +95,15 @@
             <li><a href="#!">Blue</a></li>
           </ul>
         </div>
+        <div class="row">
+            <div class="col s12">
+            <div class="kid-background-image"></div>
+            </div>
+        </div>
 
       </div>
     </div>
-
-
-
-
-    </div>
-    </form>
-    </div>
-    </div>
   </body>
-
-
-
-
-
-
 
   <!-- Footer -->
   <div id="footer">
@@ -118,6 +111,7 @@
   </div>
 
   <script src="https://api.unsplash.com/"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="materialize/js/materialize.js"></script>
   <script src="materialize/js/materialize.min.js"></script>

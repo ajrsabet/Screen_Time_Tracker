@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="materialize/css/materialize.css">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="id.css">
+    <title>KidsTime</title>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <h2>Adam's Testing Page</h2>
+
+        <div class="clock"></div>
+
+
+        <h5 class="kid1ScreenBal"></h5>
+        <h5 class="kid1Allowence"></h5>
+        <h5 class="kid1MonBal"></h5>
+        <h5 class="kid1MonReqst"></h5>
+
+        <div class="row">
+
+            <div class="col">
+
+
+                <h2>Parent Page</h2>
+                <!-- COMPLETE -->
+                <!-- Parent Add/subtract time button test -->
+                <div class="input-field col s12">
+                    
+                    <a class="waves-effect waves-light btn kid1AddTimeBtn">Add 15 minutes</a>
+                    <a class="waves-effect waves-light btn kid1DeductTimeBtn">Deduct 15 minutes</a>
+                    
+                </div>
+
+                <!-- COMPLETE -->
+                <!-- KID1 pay button test -->
+                <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea kid1MonReqstBtn"></textarea>
+                    <a class="waves-effect waves-light btn payKid1Btn">Pay Kid1</a>
+                    <a class="waves-effect waves-light btn payKid1AllBtn">Pay Kid1 All</a>
+                    <label for="textarea1">Pay Kid1</label>
+                </div>
+            </div>
+            <div class="col">
+                <h2>Kid Page</h2>
+                <!-- COMPLETE -->
+                <!-- Kid1 Mon Request button test -->
+                <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <a class="waves-effect waves-light btn kid1MonReqstBtn">Kid1 Mon Request</a>
+                    <a class="waves-effect waves-light btn kid1MonReqstAllBtn">Request All</a>
+                    <label for="textarea1">Kid1 Mon Request</label>
+                </div>
+
+                <!-- COMPLETE -->
+                <!-- KID1 screen time -->
+                <div class="input-field col s12">
+                    <a class="waves-effect waves-light btn kid1PlayPause">Play/Pause</a>
+                </div>
+                <h5 class="kid1ScreenBal">Loading...</h5>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <p>© 2019 Copyright</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://api.unsplash.com/"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="materialize/js/materialize.js"></script>
+    <script src="materialize/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

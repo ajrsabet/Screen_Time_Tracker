@@ -1,0 +1,235 @@
+#CHANGE_ME{
+border:solid red 1px;
+height: 200px;
+width: 100%;
+}
+
+#black{
+    color: black;
+}
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+#money-icon {
+    text-align: center;
+    color: grey;
+}
+#time-icon {
+    text-align: center;
+    color: grey;
+}
+.you-tube {
+    text-align: center;
+    margin: 0 auto;
+}
+#edit-profile {
+    text-align: center;
+}
+#spanCircle {
+    display: block;
+    height: 30vh;
+    width: 30vh;
+    line-height: 30vh;
+    color: black;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2em;
+    margin: 0 auto;
+    margin-top: 20vh;
+}
+.spanCircleParrent {
+    display: block;
+    height: 30vh;
+    width: 30vh;
+    line-height: 30vh;
+    color: black;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2em;
+    margin: 0 auto;
+
+}
+.spanCircleKid1 {
+    display: block;
+    height: 30vh;
+    width: 30vh;
+    line-height: 30vh;
+    color: black;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2em;
+    margin: 0 auto;
+}
+.spanCircleKid2 {
+    display: block;
+    height: 30vh;
+    width: 30vh;
+    line-height: 30vh;
+    color: black;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2em;
+    margin: 0 auto;
+}
+.spanCircleKidPink {
+    display: block;
+    height: 10vh;
+    width: 10vh;
+    line-height: 10vh;
+    color: black;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1em;
+    margin: 0 auto;
+}
+.spanCircleKidOrange {
+    display: block;
+    height: 10vh;
+    width: 10vh;
+    line-height: 10vh;
+    color: black;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1em;
+    margin: 0 auto;
+}
+.spanCircleKidBlue {
+    display: block;
+    height: 10vh;
+    width: 10vh;
+    line-height: 10vh;
+    color: black;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1em;
+    margin: 0 auto;
+}
+.spanCircleKidBlack {
+    display: block;
+    height: 10vh;
+    width: 10vh;
+    line-height: 10vh;
+    color: white;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1em;
+    margin: 0 auto;
+}
+
+#mainslogan{
+    margin-top: 15vh;
+    text-align: center;
+}
+#homepageKids{
+    margin-top: 40vh;
+}
+.homepageEmptySpace{
+    height: 30vh;
+
+}
+.statsTopSpacing1{
+    margin-top: 3vh;
+}
+.statsTopSpacing{
+    margin-top: 10vh;
+}
+.statsMiddleSpacing{
+    margin-top: 12vh;
+}
+.statsBottomSpacing{
+    height: 15vh;
+}
+.spanOvalBar{
+    display: block;
+    border-radius: 25px;
+    padding: 15px;
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+    /* margin-top: 10vh; */
+    text-align: center;
+}
+.spanOvalBar2{
+    display: block;
+    border-radius: 25px;
+    padding: 15px;
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+}
+#imgController{
+    height: 30%;
+    width: 30%;
+    margin-right: 5vw;    
+}
+#imgTV{
+    height: 45%;
+    width: 45%;
+    margin: 0 auto;
+}
+#imgDollar{
+    height: 10%;
+    width: 10%;
+}
+#imgMoney{
+    height: 40%;
+    width: 40%;
+    margin: 0 auto;
+    margin-right: 8vw;
+}
+.homeManange{
+    margin-top: 35vh;
+    text-align: center;
+    font-size: 1vw;
+}
+.pictureSize{
+    height: 11vh;
+}
+
+h5 {
+font-family: Arial, Helvetica, sans-serif;
+color: rgb(155, 155, 155);
+font-size: 1vw;
+}
+.SpanOval3 {
+    border-radius: 25px;
+    margin-left: 10vw;
+}
+.SpanOval4 {
+    border-radius: 25px;
+    margin-right: 10vw;
+}
+.body{
+    background-image: url("images/website_main_background.png");
+}
+.blackText{
+    color: black;
+}
+.birthdayCake{
+    margin-top: 3vh;
+}
+.birthdayCake1{
+    margin-top: 2vh;
+}
+
+.range-field{
+margin: 0;
+}
+.searchMargin{
+    margin-top: 3vh;
+}

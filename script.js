@@ -43,14 +43,16 @@ function refreshBallances() {
 	// Screen balance
 	$('.kid1ScreenBal').html("Screen Balance: " + kid1ScreenBal);
 	// console.log(moment(kid1ScreenBal * 60 * 1000).format('h:mm:ss'));
+	
+	// Local storage current screentime balance
 	localStorage.setItem("kid1ScreenBal", kid1ScreenBal);
 
-	// Money request
+	// Local storage Money request total
 	$('.kid1MonReqst').html("Money request $" + kid1MonReqst);
 	localStorage.setItem("kid1MonReqst", kid1MonReqst);
 
-	// Money paid history
-	localStorage.setItem("kid1MoneyHist", JSON.stringify(kid1MoneyHist))
+	// Local storage set money withdrawal history. if working, delete in 4 locations within functions
+	// localStorage.setItem("kid1MoneyHist", JSON.stringify(kid1MoneyHist))
 }
 
 
@@ -85,10 +87,21 @@ $(".payKid1Btn").on("click", function () {
 
 			// Add new value to existing value
 			kid1MoneyHist.splice(indexDate + 1, 1, JSON.stringify(parseInt(kid1MoneyHist[indexDate + 1]) + JSON.parse($(this).prev().val())));
+
+			// Reduce available balance
+			kid1ScreenBal = (kid1ScreenBal - (JSON.parse($(this).prev().val())) / kid1Allowence)
+			// Commit new value to storage
+			localStorage.setItem("kid1MoneyHist", JSON.stringify(kid1MoneyHist))
 		} else {
 			// If date is not in history, add new date and value
 			kid1MoneyHist.push(moment().format('YYYYMMDD'));
 			kid1MoneyHist.push($(this).prev().val());
+			
+			// Reduce available balance
+			kid1ScreenBal = (kid1ScreenBal - (JSON.parse($(this).prev().val())) / kid1Allowence)
+
+			// Commit new value to storage
+			localStorage.setItem("kid1MoneyHist", JSON.stringify(kid1MoneyHist))
 		}
 
 		// Update kid1ScreenBal
@@ -99,7 +112,7 @@ $(".payKid1Btn").on("click", function () {
 			kid1MonReqst = kid1MonReqst - JSON.parse($(this).prev().val());
 			kid1ScreenBal = kid1ScreenBal - (JSON.parse($(this).prev().val()) / kid1Allowence);
 		}
-		
+		// localStorage.setItem("kid1ScreenBal", JSON.stringify(kid1ScreenBal));
 		refreshBallances();
 	}
 });
@@ -114,10 +127,13 @@ $(".payKid1AllBtn").on("click", function () {
 
 			// Add new value to existing value
 			kid1MoneyHist.splice(indexDate + 1, 1, JSON.stringify(parseInt(kid1MoneyHist[indexDate + 1]) + kid1MonBal));
+
+			localStorage.setItem("kid1MoneyHist", JSON.stringify(kid1MoneyHist))
 		} else {
 			// If date is not in history, add new date and value
 			kid1MoneyHist.push(moment().format('YYYYMMDD'));
 			kid1MoneyHist.push(kid1MonBal);
+			localStorage.setItem("kid1MoneyHist", JSON.stringify(kid1MoneyHist))
 		}
 
 		// Update kid1ScreenBal

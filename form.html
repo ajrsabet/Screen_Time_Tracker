@@ -9,63 +9,99 @@
   <link rel="stylesheet" href="materialize/css/materialize.min.css" />
   <link rel="stylesheet" href="id.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <title>Kid Profile</title>
+  <title>Edit Profile</title>
 </head>
 
 <body>
+
   <!-- Navbar -->
   <div class="container-fluid">
     <nav id="transparentBG">
-      <div class="nav-wrapper">
-        <a href="index.html" class="brand-logo" id="black">KidsTime</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.htm" id="black">contact(if we can)</a></li>
-        </ul>
-      </div>
+      <ul id="dropdown1" class="dropdown-content">Menu
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stats.html">Parent's Portal</a></li>
+        <li><a href="kid.html">Kid's Page</a></li>
+      </ul>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="index.html" class="brand-logo">Kidstime</a>
+          <ul class="right hide-on-med-and-down">
+            <!-- Dropdown Trigger -->
+            <li><a class="dropdown-trigger" data-target="dropdown1">Menu<i
+                  class="material-icons right">arrow_drop_down</i></a></li>
+          </ul>
+        </div>
+      </nav>
     </nav>
   </div>
 
   <!-- Body -->
 
   <body>
+    <!-- Background Imge -->
+    <div class="-kid-background-image"></div>
+
     <h1 id="edit-profile">Edit Profile</h1>
+
     <div class="container">
       <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s12">
-              <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-              <label for="first_name">First Name</label>
-            </div>
-            <div class="input-field col s6">
-              <!-- Age Dropdown Structure ***** This is a jQuery plugin so make sure you initialize this in your document ready.-->
-              <div class="input-field col s12">
-                  <select>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="4">4 years old</option>
-                    <option value="5">5 years old</option>
-                    <option value="6">6 years old</option>
-                    <option value="7">7 years old</option>
-                    <option value="8">8 years old</option>
-                    <option value="9">9 years old</option>
-                    <option value="10">10 years old</option>
-                  </select>
-                  <label>Select Your Age</label>
-                </div>
-            </div>
-          </div>
-          <div class="row">
-            <!-- Background image search input field  -->
-            <div class="col s12">
-              <div class="input-field inline">
-                <input id="email_inline" type="email" class="validate">
-                <label for="email_inline">Search</label>
-                <span class="helper-text" data-error="wrong" data-success="right">Search for a background image! (try typing "Dog")</span>
-              </div>
-            </div>
-          </div>
+        <!-- Name Input  -->
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">First Name</label>
+        </div>
+        <!-- Background image search input field  -->
+        <div class="input-field col s6">
+          <i class="material-icons prefix">beach_access</i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">Favorite thing in the whole world</label>
+        </div>
+        </form>
       </div>
-      </form>
+      <div class="row statsTopSpacing1">
+        <div class="col s2">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col 1">
+          <i class="material-icons prefix">cake</i>
+        </div>
+        <div class="col 1">
+          <h5>Age</h5>
+        </div>
+        <!-- Age toggle bar  -->
+        <div class="input-field col s5">
+          <form action="#">
+            <p class="range-field">
+              <input type="range" id="test5" min="0" max="18" />
+            </p>
+          </form>
+        </div>
+        <div class="input-field col s1">
+          <i class="material-icons prefix">brush</i>
+        </div>
+        <div class="col s2"></div>
+        <div class="col s4">
+          <!-- Dropdown Trigger -->
+          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Pick a color</a>
+          <!-- Dropdown Structure -->
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#!">Pink</a></li>
+            <li><a href="#!">Purple</a></li>
+            <li><a href="#!">Green</a></li>
+            <li><a href="#!">Blue</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    </div>
+    </form>
     </div>
     </div>
   </body>

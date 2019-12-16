@@ -9,6 +9,8 @@
  */
 /* 2D TRANSITIONS */
 /* Grow */
+
+
 .hvr-grow {
   display: inline-block;
   vertical-align: middle;
@@ -184,6 +186,7 @@
   animation-timing-function: linear;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
+  color: black;
 }
 
 /* Pop */

@@ -112,7 +112,7 @@ width: 100%;
     width: 100%;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 10vh;
+    /* margin-top: 10vh; */
     text-align: center;
 }
 .spanOvalBar2{
@@ -172,4 +172,3 @@ font-size: 1vw;
 .blackText{
     color: black;
 }
-

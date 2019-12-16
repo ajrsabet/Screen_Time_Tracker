@@ -8,58 +8,80 @@
   <link rel="stylesheet" href="materialize/css/materialize.css" />
   <link rel="stylesheet" href="materialize/css/materialize.min.css" />
   <link rel="stylesheet" href="id.css" />
+  <link rel="stylesheet" href="Hover-master/hover.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <title>Kid Profile</title>
+  <title>Kid's Profile</title>
 </head>
 
 <body>
   <!-- Navbar -->
   <div class="container-fluid">
     <nav id="transparentBG">
-      <div class="nav-wrapper">
-        <a href="index.html" class="brand-logo" id="black">KidsTime</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.htm" id="black">contact(if we can)</a></li>
-        </ul>
-      </div>
+      <ul id="dropdown1" class="dropdown-content">Menu
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stats.html">Parent's Portal</a></li>
+        <li><a href="kid.html">Kid's Page</a></li>
+      </ul>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="index.html" class="brand-logo">Kidstime</a>
+          <ul class="right hide-on-med-and-down">
+            <!-- Dropdown Trigger -->
+            <li><a class="dropdown-trigger" data-target="dropdown1">Menu<i
+                  class="material-icons right">arrow_drop_down</i></a></li>
+          </ul>
+        </div>
+      </nav>
     </nav>
   </div>
 
   <!-- Body -->
+
   <body>
-  
+
+    <!-- Background Imge -->
+    <div class="-kid-background-image"></div>
+
     <div class="container">
+      <div class="row statsTopSpacing1">
+        <div class="col s2">
+        </div>
+      </div>
       <!-- need to make this "edit" button take you to form.html when clicked -->
-        <a class="btn-floating btn-large cyan pulse right-align"><i class="material-icons">edit</i></a>
-      <!-- Background Imge -->
-      <div class="-kid-background-image"></div>
+      <div class="right-align"><a class="btn-floating btn-large grey pulse"><i class="material-icons">edit</i></a></div>
+      <div class="row">
+        <div class="col s4"></div>
+        <div class="col s4 center-align">
+          <!-- Kid circle Icon thing -->
+          <a href="kid.html">
+            <span class="deep-purple lighten-3 spanCircleKid1 center-align hvr-bob">Kid</span>
+          </a>
+        </div>
+        <div class="col s4"></div>
+      </div>
       <div class="row statsTopSpacing">
         <div class="col s2">
         </div>
       </div>
-      <!-- Kid circle Icon thing -->
-      <span class="deep-purple lighten-3 spanCircleKid1">Kid</span>
-      <div class="row statsTopSpacing">
-          <div class="col s2">
-          </div>
-        </div>
       <div class="row">
         <!-- Dollar icon -->
-        <div><i class="col s2 medium material-icons right-align" id="money-icon">attach_money</i></div>
+        <div><i class="col s2 medium material-icons right-align" id="money-icon">access_alarm</i></div>
         <!-- Actual Money Input --- NEED TO PULL FROM JavaScript -->
-        <span class="col s8 green accent-2 OvalBar center-align"><h5>Placeholder money</h5></span>
+        <span class="col s8 green accent-2 spanOvalBar2 center-align">
+          <h5>Placeholder time</h5>
+        </span>
         <!-- Remove BUTTON icon ---NEEED TO MAKE IT A CLICKABLE BUTTON IN JavaScript -->
-        <div><i class="col s1 medium material-icons center-align">add_circle_icon</i></div>
-        <div><i class="col s1 medium material-icons center-align">shopping_cart</i></div>
+        <div><i class="col s2 medium material-icons center-align hvr-bob hvr-push:hover">play_circle_outline</i></div>
       </div>
       <div class="row">
         <!-- Time icon -->
-        <div><i class="col s2 medium material-icons center-align" id="time-icon">access_alarm</i></div>
+        <div><i class="col s2 medium material-icons center-align" id="time-icon">attach_money</i></div>
         <!-- Actual Time Input --- NEED TO PULL FROM JavaScript -->
-        <span class="col s8 green accent-2 OvalBar center-align"><h5>Placeholder time</h5></span>
+        <span class="col s8 green accent-2 spanOvalBar2 center-align">
+          <h5>Placeholder money</h5>
+        </span>
         <!-- Remove BUTTON icon ---NEEED TO MAKE IT A CLICKABLE BUTTON IN JavaScript -->
-        <div><i class="col s1 medium material-icons center-align">add_circle_icon</i></div>
-        <div><i class="col s1 medium material-icons">play_circle_outline</i></div>
+        <div><i class="col s2 medium material-icons center-align hvr-bob hvr-push:hover">shopping_cart</i></div>
       </div>
       <!-- search box for youtube -->
       <form>
@@ -70,23 +92,17 @@
           </div>
         </div>
       </form>
-      <!-- youtube --NEED TO ADD FUNCTIONALITY WITH JavaScript-->
-      <div class="you-tube">youtube placeholder</div>
-      <div class="col s8">
-        <!-------------- first chart goes here -->
-            <!-- <div class="video-container">
-                <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
-              </div> -->
-              <div id="player"></div>
-        <!------------------- ends here -->
-      </div>
-    </div>
-    <!-- play icon for youtube -- NEEDS TO WORK USING Javascript-->
-    <div class="col s8">
-      <!-------------- first chart goes here -->
       
-      <!------------------- ends here -->
+      <!-- youtube --NEED TO ADD FUNCTIONALITY WITH JavaScript-->
+      <div class="row">
+        <div class="col s2"></div>
+        <div id="player" class="col s8 center-align"></div>
+        <div class="col s2"></div>
+      </div>
+      
     </div>
+
+    
     <!-- bottom spacing -->
     <div class="col s2">
     </div>

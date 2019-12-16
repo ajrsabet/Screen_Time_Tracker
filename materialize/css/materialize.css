@@ -5547,12 +5547,13 @@ button.btn-floating {
 }
 
 .dropdown-content {
-  background-color: #fff;
+  background-color: black;
+  color: black;
   margin: 0;
   display: none;
   min-width: 100px;
   overflow-y: auto;
-  opacity: 0;
+  opacity: 50;
   position: absolute;
   left: 0;
   top: 0;

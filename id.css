@@ -7,9 +7,6 @@ width: 100%;
 #black{
     color: black;
 }
-#transparentBG{
-    background: rgba(0,0,0,0);
-  }
 #footer {
     position: fixed;
     left: 0;
@@ -115,7 +112,7 @@ width: 100%;
     width: 100%;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 10vh;
+    /* margin-top: 10vh; */
     text-align: center;
 }
 .spanOvalBar2{
@@ -161,4 +158,17 @@ font-family: Arial, Helvetica, sans-serif;
 color: rgb(155, 155, 155);
 font-size: 1vw;
 }
-
+.SpanOval3 {
+    border-radius: 25px;
+    margin-left: 10vw;
+}
+.SpanOval4 {
+    border-radius: 25px;
+    margin-right: 10vw;
+}
+.body{
+    background-image: url("images/website_main_background.png");
+}
+.blackText{
+    color: black;
+}

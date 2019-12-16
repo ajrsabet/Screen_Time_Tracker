@@ -7412,21 +7412,21 @@ input[type=range]::-webkit-slider-thumb {
   height: 14px;
   width: 14px;
   border-radius: 50%;
-  background: #26a69a;
+  background: #69f0ae;
   -webkit-transition: -webkit-box-shadow .3s;
   transition: -webkit-box-shadow .3s;
   transition: box-shadow .3s;
   transition: box-shadow .3s, -webkit-box-shadow .3s;
   -webkit-appearance: none;
-  background-color: #26a69a;
+  background-color: #69f0ae;
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
   margin: -5px 0 0 0;
 }
 
 .keyboard-focused input[type=range]:focus:not(.active)::-webkit-slider-thumb {
-  -webkit-box-shadow: 0 0 0 10px rgba(38, 166, 154, 0.26);
-          box-shadow: 0 0 0 10px rgba(38, 166, 154, 0.26);
+  -webkit-box-shadow: 0 0 0 10px rgba(105,240,174);
+          box-shadow: 0 0 0 10px rgba(105,240,174);
 }
 
 input[type=range] {
@@ -7437,7 +7437,7 @@ input[type=range] {
 
 input[type=range]::-moz-range-track {
   height: 3px;
-  background: #c2c0c2;
+  background: #69f0ae;
   border: none;
 }
 

@@ -4,6 +4,10 @@
 // TODO: Go to kids page kid.html
 // TODO: PARKING LOT Login 
 
+/////////////////// Materialize JS /////////////////////////
+$( document ).ready(function(){
+	$(".dropdown-trigger").dropdown();
+})
 
 
 //////////////////// Global variables////////////////// 
@@ -180,27 +184,35 @@ $(".kid1DeductTimeBtn").click(function () {
 /////////////////// Kids page /////////////////
 // TODO: Edit/customize styles LH
 
-// insert class for saveBtn
-// var saveBtn = $("");
-// saveBtn.on("click", function (){
-// insert value for name text box
-// var name = $("");
-// insert value for age text box
-// var age = $("");
-// insert value for background input
 
-var searchInput = "dogs";
-var queryURL = "https://api.unsplash.com/?query=" + searchInput + "&client_id=e95ecaea5f2f22854ddc21c0f047145e88a13a1759d8a88737ec5affafc9ead4";
-
-$.ajax({
-	allRoutes: true,
-	url: queryURL,
-	method: "GET"
-}).then(function (response) {
-	console.log(response);
-
-});
-// });
+    // insert class for saveBtn
+    var saveBtn = $(".saveBtn");
+    // insert value for name text box
+    // var name = $("");
+    // insert value for age text box
+    // var age = $("");
+    // insert value for background input
+    
+    var searchInput = "dogs"; 
+	var queryURL = "https://api.unsplash.com/search/photos?query=" + searchInput + "&client_id=e95ecaea5f2f22854ddc21c0f047145e88a13a1759d8a88737ec5affafc9ead4";
+	
+	$(document).ready(function(){
+		$.ajax({
+			allRoutes: true,
+			url: queryURL,
+			method: "GET"
+		}).then(function(response) {
+			console.log(response.results[0].urls.thumb);
+			var imageHolder = $(".kid-background-image");
+			// var searchImage = $("<img>");
+			
+			imageHolder.attr("src", (response.results[0].urls.thumb));
+			// imageHolder.append(imageHolder);
+			
+		});
+	});
+	
+	saveBtn.on("click", function (){}
 
 
 ///// TODO: modal popout 

@@ -161,4 +161,12 @@ font-family: Arial, Helvetica, sans-serif;
 color: rgb(155, 155, 155);
 font-size: 1vw;
 }
+.SpanOval3 {
+    border-radius: 25px;
+    margin-left: 10vw;
+}
+.SpanOval4 {
+    border-radius: 25px;
+    margin-right: 10vw;
+}
 

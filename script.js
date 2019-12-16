@@ -4,8 +4,6 @@
 // TODO: Go to kids page kid.html
 // TODO: PARKING LOT Login 
 
-
-
 //////////////////// Global variables////////////////// 
 var kid1ScreenBal = 60;
 var kid1Allowence = .10;

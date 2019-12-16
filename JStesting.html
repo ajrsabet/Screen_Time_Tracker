@@ -16,50 +16,63 @@
 
 
 
-    <h1>Adam's Testing Page</h1>
+    <div class="container">
+        <h2>Adam's Testing Page</h2>
 
-    <div class="clock"></div>
-
-
-    <h5 class="kid1ScreenBal"></h5>
-    <h5 class="kid1Allowence"></h5>
-    <h5 class="kid1MonBal"></h5>
-    <h5 class="kid1MonReqst"></h5>
+        <div class="clock"></div>
 
 
+        <h5 class="kid1ScreenBal"></h5>
+        <h5 class="kid1Allowence"></h5>
+        <h5 class="kid1MonBal"></h5>
+        <h5 class="kid1MonReqst"></h5>
 
-    
-    <!-- KID1 pay button test -->
-    <div class="input-field col s12">
-        <textarea id="textarea1" class="materialize-textarea kid1MonReqstBtn"></textarea>
-        <a class="waves-effect waves-light btn payKid1Btn">Pay Kid1</a>
-        <label for="textarea1">Pay Kid1</label>
+        <div class="row">
+
+            <div class="col">
+
+
+                <h2>Parent Page</h2>
+                <!-- COMPLETE -->
+                <!-- Parent Add/subtract time button test -->
+                <div class="input-field col s12">
+                    
+                    <a class="waves-effect waves-light btn kid1AddTimeBtn">Add 15 minutes</a>
+                    <a class="waves-effect waves-light btn kid1DeductTimeBtn">Deduct 15 minutes</a>
+                    
+                </div>
+
+                <!-- COMPLETE -->
+                <!-- KID1 pay button test -->
+                <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea kid1MonReqstBtn"></textarea>
+                    <a class="waves-effect waves-light btn payKid1Btn">Pay Kid1</a>
+                    <a class="waves-effect waves-light btn payKid1AllBtn">Pay Kid1 All</a>
+                    <label for="textarea1">Pay Kid1</label>
+                </div>
+            </div>
+            <div class="col">
+                <h2>Kid Page</h2>
+                <!-- COMPLETE -->
+                <!-- Kid1 Mon Request button test -->
+                <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <a class="waves-effect waves-light btn kid1MonReqstBtn">Kid1 Mon Request</a>
+                    <a class="waves-effect waves-light btn kid1MonReqstAllBtn">Request All</a>
+                    <label for="textarea1">Kid1 Mon Request</label>
+                </div>
+
+                <!-- COMPLETE -->
+                <!-- KID1 screen time -->
+                <div class="input-field col s12">
+                    <a class="waves-effect waves-light btn playPause">Play/Pause</a>
+                </div>
+                <h5 class="kid1ScreenBal">Loading...</h5>
+            </div>
+
+        </div>
+
     </div>
-
-    <!-- KID1 money request button test -->
-    <div class="input-field col s12">
-        <textarea id="textarea1" class="materialize-textarea"></textarea>
-        <a class="waves-effect waves-light btn kid1MonReqstBtn">Kid1 Money Request</a>
-        <label for="textarea1">Kid1 Money Request</label>
-    </div>
-
-    <!-- KID1 Add/subtract time button test -->
-    <div class="input-field col s12">
-        <textarea id="textarea1" class="materialize-textarea kid1MonReqstBtn"></textarea>
-        <a class="waves-effect waves-light btn payKid1Btn">Add/deduct amount</a>
-        <a class="waves-effect waves-light btn payKid1Btn">Add 15 minutes</a>
-        <a class="waves-effect waves-light btn payKid1Btn">Deduct 15 minutes</a>
-        <label for="textarea1">Pay Kid1</label>
-    </div>
-
-
-    <!-- KID1 screen time -->
-    <div class="input-field col s12">
-        <a class="waves-effect waves-light btn playPause">Play/Pause</a>
-    </div>
-    <h5 class="kid1ScreenBal">Loading...</h5>
-
-
 
     <div id="footer">
         <p>© 2019 Copyright</p>

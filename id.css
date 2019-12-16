@@ -172,3 +172,15 @@ font-size: 1vw;
 .blackText{
     color: black;
 }
+.align-center{
+    align-content: center;
+}
+.birthdayCake{
+    margin-top: 3vh;
+}
+.range-field{
+margin: 0;
+}
+.searchMargin{
+    margin-top: 2vh;
+}

@@ -4,6 +4,10 @@
 // TODO: Go to kids page kid.html
 // TODO: PARKING LOT Login 
 
+/////////////////// Materialize JS /////////////////////////
+$( document ).ready(function(){
+	$(".dropdown-trigger").dropdown();
+})
 
 
 //////////////////// Global variables////////////////// 

@@ -193,26 +193,48 @@ $(".kid1DeductTimeBtn").click(function () {
     // var age = $("");
     // insert value for background input
     
-    var searchInput = "dogs"; 
+	var searchInput = $(".searchInput"); 
+	var searchBtn = $("");
 	var queryURL = "https://api.unsplash.com/search/photos?query=" + searchInput + "&client_id=e95ecaea5f2f22854ddc21c0f047145e88a13a1759d8a88737ec5affafc9ead4";
 	
+    var kid1ImgURL = "";
+	var kid2ImgURL = "";
+	searchBtn.on("click", function(){
+		console.log(searchInput);
+	})
+
 	$(document).ready(function(){
 		$.ajax({
 			allRoutes: true,
 			url: queryURL,
 			method: "GET"
 		}).then(function(response) {
+			
+			
 			console.log(response.results[0].urls.thumb);
 			var imageHolder = $(".kid-background-image");
 			// var searchImage = $("<img>");
 			
 			imageHolder.attr("src", (response.results[0].urls.thumb));
 			// imageHolder.append(imageHolder);
+			kid1ImgURL = response.results[0].urls.thumb;
 			
 		});
 	});
 	
-	saveBtn.on("click", function (){}
+	if (localStorage.getItem("kid1ImgURL") !== null) {
+		kid1ImgURL = (localStorage.getItem("kid1ImgURL"));
+	}
+	// if (localStorage.getItem("kid2ImgURL") !== null) {
+	// 	kid2ImgURL = (localStorage.getItem("kid2ImgURL"));
+	// }
+
+	saveBtn.on("click", function (){
+		localStorage.setItem("kid1ImgURL", (kid1ImgURL))
+
+		// localStorage.setItem("kid2ImgURL", (kid2ImgURL))
+		
+	});
 
 
 ///// TODO: modal popout 

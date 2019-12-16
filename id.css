@@ -7,9 +7,6 @@ width: 100%;
 #black{
     color: black;
 }
-#transparentBG{
-    background: rgba(0,0,0,0);
-  }
 #footer {
     position: fixed;
     left: 0;
@@ -168,5 +165,11 @@ font-size: 1vw;
 .SpanOval4 {
     border-radius: 25px;
     margin-right: 10vw;
+}
+.body{
+    background-image: url("images/website_main_background.png");
+}
+.blackText{
+    color: black;
 }
 

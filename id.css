@@ -16,6 +16,8 @@ width: 100%;
     background-color: black;
     color: white;
     text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 1vh;
 }
 #money-icon {
     text-align: center;
@@ -127,7 +129,7 @@ width: 100%;
     text-align: center;
     font-size: 1em;
     margin: 0 auto;
-    background-color: #b39ddb;
+    background-color: #7c4dff;
 }
 
 .spanCircleKidGreen {
@@ -141,7 +143,7 @@ width: 100%;
     text-align: center;
     font-size: 1em;
     margin: 0 auto;
-    background-color: #aed581;
+    background-color: #00e676;
 }
 .spanCircleKidBlue {
     display: block;
@@ -154,7 +156,7 @@ width: 100%;
     text-align: center;
     font-size: 1em;
     margin: 0 auto;
-    background-color: #64b5f6;
+    background-color: #40c4ff;
 }
 .spanCircleKidYellow {
     display: block;
@@ -313,11 +315,14 @@ margin: 0;
     width: 22%;
     margin: 0 auto;
     display: block;
+    margin-top: 4vh;
 }
 .figureSize2{
     width: 35%;
     margin: 0 auto;
     display: block;
+    margin-top: 4vh;
+
 }
 .noPadding{
     padding: 0;
@@ -343,5 +348,13 @@ p {
 }
 .kid-background-image {
     padding-bottom: 4vh;
+}
+.containerMargin{
+    margin-top: 5vh;
+}
+.moveOver{
+    display: block;
+    margin: 0 auto;
+
 }
 

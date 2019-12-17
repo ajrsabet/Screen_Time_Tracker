@@ -75,86 +75,7 @@ function kid1Refresh() {
 
 // TODO: View graph/history 
 
-// var ctx = document.getElementById('myChart');
-// var myChart = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-// 		// insert dates/time for info to be displayed
-//         labels: ['12/1', '12/8', '12/15', '12/22', '12/29'],
-//         datasets: [{
-// 			label: 'Time/Money Consumed over Time',
-// 			// insert data values for appropriate dates/times 
-//             data: [kid1MoneyHist, 19, 3, 5, 2, 3],
-//             backgroundColor: [
-//                 'rgba(255, 99, 132, 0.2)',
-//                 'rgba(54, 162, 235, 0.2)',
-//                 'rgba(255, 206, 86, 0.2)',
-//                 'rgba(75, 192, 192, 0.2)',
-//                 'rgba(153, 102, 255, 0.2)',
-//                 'rgba(255, 159, 64, 0.2)'
-//             ],
-//             borderColor: [
-//                 'rgba(255, 99, 132, 1)',
-//                 'rgba(54, 162, 235, 1)',
-//                 'rgba(255, 206, 86, 1)',
-//                 'rgba(75, 192, 192, 1)',
-//                 'rgba(153, 102, 255, 1)',
-//                 'rgba(255, 159, 64, 1)'
-//             ],
-// 			borderWidth: 1,
-// 			maintainAspectRatio: true,
-			
-//         }]
-//     },
-//     options: {
-//         scales: {
-//             yAxes: [{
-//                 ticks: {
-//                     beginAtZero: true
-//                 }
-//             }]
-//         }
-//     }
-// });
-// var ctx = document.getElementById('myChart2');
-// var myChart = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//         labels: ['12/1', '12/8', '12/15', '12/22', '12/29'],
-//         datasets: [{
-//             label: '# of Votes',
-//             data: [kid1MoneyHist, 19, 3, 5, 2, 3],
-//             backgroundColor: [
-//                 'rgba(255, 99, 132, 0.2)',
-//                 'rgba(54, 162, 235, 0.2)',
-//                 'rgba(255, 206, 86, 0.2)',
-//                 'rgba(75, 192, 192, 0.2)',
-//                 'rgba(153, 102, 255, 0.2)',
-//                 'rgba(255, 159, 64, 0.2)'
-//             ],
-//             borderColor: [
-//                 'rgba(255, 99, 132, 1)',
-//                 'rgba(54, 162, 235, 1)',
-//                 'rgba(255, 206, 86, 1)',
-//                 'rgba(75, 192, 192, 1)',
-//                 'rgba(153, 102, 255, 1)',
-//                 'rgba(255, 159, 64, 1)'
-//             ],
-// 			borderWidth: 1,
-// 			maintainAspectRatio: true,
-			
-//         }]
-//     },
-//     options: {
-//         scales: {
-//             yAxes: [{
-//                 ticks: {
-//                     beginAtZero: true
-//                 }
-//             }]
-//         }
-//     }
-// });
+
 
 
 //// moment.js
@@ -369,52 +290,7 @@ function kid1stopTimer() {
 }
 
 
-//// TODO: API Youtube LH
-// 2. This code loads the IFrame Player API code asynchronously.
-var tag = document.createElement('script');
 
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-// 3. This function creates an <iframe> (and YouTube player)
-//    after the API code downloads.
-var player;
-
-function onYouTubeIframeAPIReady() {
-	player = new YT.Player('player', {
-		height: '390',
-		width: '640',
-		videoId: '_UVhAWP83TM',
-		autoplay: 1,
-		events: {
-			'onReady': onPlayerReady,
-			//'onStateChange': onPlayerStateChange
-		}
-	});
-}
-
-// 4. The API will call this function when the video player is ready.
-function onPlayerReady(event) {
-	player.stopVideo();
-}
-
-// 5. The API calls this function when the player's state changes.
-//    The function indicates that when playing a video (state=1),
-//    the player should play for six seconds and then stop.
-var done = false;
-
-function onPlayerStateChange(event) {
-	if (event.data == YT.PlayerState.PLAYING && !done) {
-		// setTimeout(stopVideo, 6000);
-		done = true;
-	}
-}
-
-function stopVideo() {
-	player.stopVideo();
-
-}
 
 ////// TODO: MDP dynamic search 
 

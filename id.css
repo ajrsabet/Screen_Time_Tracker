@@ -92,6 +92,7 @@ width: 100%;
     text-align: center;
     font-size: 1em;
     margin: 0 auto;
+    background-color: #e91e63
 }
 .spanCircleKid1Orange {
     display: block;
@@ -104,6 +105,7 @@ width: 100%;
     text-align: center;
     font-size: 1em;
     margin: 0 auto;
+    background-color: #ff9800
 }
 .spanCircleKid1Blue {
     display: block;
@@ -116,6 +118,7 @@ width: 100%;
     text-align: center;
     font-size: 1em;
     margin: 0 auto;
+    background-color: #448AFF 
 }
 .spanCircleKid1Black {
     display: block;
@@ -128,55 +131,9 @@ width: 100%;
     text-align: center;
     font-size: 1em;
     margin: 0 auto;
+    background-color: #000000
 }
-.spanCircleKid2Pink {
-    display: block;
-    height: 10vh;
-    width: 10vh;
-    line-height: 10vh;
-    color: black;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 1em;
-    margin: 0 auto;
-}
-.spanCircleKid2Orange {
-    display: block;
-    height: 10vh;
-    width: 10vh;
-    line-height: 10vh;
-    color: black;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 1em;
-    margin: 0 auto;
-}
-.spanCircleKid2Blue {
-    display: block;
-    height: 10vh;
-    width: 10vh;
-    line-height: 10vh;
-    color: black;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 1em;
-    margin: 0 auto;
-}
-.spanCircleKid2Black {
-    display: block;
-    height: 10vh;
-    width: 10vh;
-    line-height: 10vh;
-    color: white;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 1em;
-    margin: 0 auto;
-}
+
 #mainslogan{
     margin-top: 15vh;
     text-align: center;

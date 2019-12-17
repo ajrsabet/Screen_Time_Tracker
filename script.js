@@ -41,11 +41,11 @@ if (localStorage.getItem("kidArr") !== null) {
 	kidArr = JSON.parse(localStorage.getItem("kidArr"));
 }
 
-
+var ThemeArr = ["pink", "blue", "orange", "black"]
 ////////////////// Retrieve local storage /////////////
-if (localStorage.getItem("kidArr[0].ScreenBal") !== null) {
-	kidArr[0].ScreenBal = JSON.parse(localStorage.getItem("kidArr[0].ScreenBal"));
-}
+// if (localStorage.getItem("kidArr[0].ScreenBal") !== null) {
+// 	kidArr[0].ScreenBal = JSON.parse(localStorage.getItem("kidArr[0].ScreenBal"));
+// }
 
 
 ////////////// Refresh local storage/display ////////////
@@ -339,40 +339,50 @@ $(".spanCircleKid1Pink").click(function () {
 	kidArr[0].Theme = "pink"
 	kid1Refresh();
 	updateTheme();
+	console.log(kidArr[0].Theme);
+
 })
 
 $(".spanCircleKid1Blue").click(function () {
 	kidArr[0].Theme = "blue"
 	kid1Refresh();
 	updateTheme();
+	console.log(kidArr[0].Theme);
 })
 
 $(".spanCircleKid1Orange").click(function () {
 	kidArr[0].Theme = "orange"
 	kid1Refresh();
 	updateTheme();
+	console.log(kidArr[0].Theme);
 })
 
 $(".spanCircleKid1Black").click(function () {
 	kidArr[0].Theme = "black"
 	updateTheme();
 	kid1Refresh();
+	console.log(kidArr[0].Theme);
 })
 
 function updateTheme() {
-		
-	for(i = 0; i < $(".green").length; i++) {
-	  if (kidArr[0].Theme === "pink") {
-		$(".green"[i]).css("background-color", "#e91e63 !important")
-	} else if (kidArr[0].Theme === "blue"){ 
-		$(".green"[i]).css("background-color", "#2196F3 !important")
-	} else if (kidArr[0].Theme === "orange"){
-		$(".green"[i]).css("background-color", "#ff9800 !important")
-	} else if (kidArr[0].Theme === "orange"){
-		$(".green"[i]).css("background-color", "#000000 !important")
-	}
-	}
-  }
+	var themeClassArr = [$(".green"),$(".pink"),$(".blue"),$(".orange"),$(".black")]
+	for (let i = 0; i < themeClassArr.length; i++) {
+			
+	if (kidArr[0].Theme === "pink") {
+			themeClassArr[i].addClass('pink');
+			themeClassArr[i].removeClass('green blue orange black white-text');
+		} else if (kidArr[0].Theme === "blue") {
+			themeClassArr[i].addClass('blue');
+			themeClassArr[i].removeClass('green pink orange black white-text');
+		} else if (kidArr[0].Theme === "orange") {
+			themeClassArr[i].addClass('orange');
+			themeClassArr[i].removeClass('green pink blue black white-text');
+		} else if (kidArr[0].Theme === "black") {
+			themeClassArr[i].addClass('black white-text');
+			themeClassArr[i].removeClass('green pink blue orange');
+		}
+}
+}
 
 //   function updateTheme() {
 // 	var green = document.getElementsByClassName('green');
@@ -380,7 +390,7 @@ function updateTheme() {
 // 	  'blue';
 // 	  if (kidArr[0].Theme === "pink") {
 // 		  console.log("pink");
-		  
+
 // 		green[i].style.backgroundColor =  "#e91e63"
 // 	} else if (kidArr[0].Theme === "blue"){ 
 // 		console.log("blue");

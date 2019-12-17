@@ -1,6 +1,7 @@
 /////////////////// Materialize JS /////////////////////////
 $(document).ready(function () {
 	$(".dropdown-trigger").dropdown();
+	player.stopVideo();
 })
 
 
@@ -55,12 +56,12 @@ function kid1RefreshBalances() {
 	$('.kid1Allowence').html("Allowence Rate: $" + kidArr[0].Allowence * 60 + "/hour");
 
 	// Money balance
-	kidArr[0].MonBal = ((kidArr[0].ScreenBal / 60 ) * kidArr[0].Allowence/1000).toFixed(2);
+	kidArr[0].MonBal = ((kidArr[0].ScreenBal / 60) * kidArr[0].Allowence / 1000).toFixed(2);
 	$('.kid1MonBal').html("Available Money: $" + (kidArr[0].MonBal));
 
 	// Screen balance
-	$('.kid1ScreenBal').html("Screen Balance: " + (moment(kidArr[0].ScreenBal + (8*60*60*1000)).format('HH:mm:ss')));
-	
+	$('.kid1ScreenBal').html("Screen Balance: " + (moment(kidArr[0].ScreenBal + (8 * 60 * 60 * 1000)).format('HH:mm:ss')));
+
 
 	$('.kid1MonReqst').html("Money request $" + kidArr[0].MonReqst);
 
@@ -105,7 +106,7 @@ $(".payKid1Btn").on("click", function () {
 
 			// Reduce available balance
 			kidArr[0].ScreenBal = (kidArr[0].ScreenBal - (JSON.parse($(this).prev().val())) / kidArr[0].Allowence)
-			
+
 		} else {
 			// If date is not in history, add new date and value
 			kidArr[0].MoneyHist.push(moment().format('YYYYMMDD'));
@@ -155,7 +156,7 @@ $(".payKid1AllBtn").on("click", function () {
 // Add time/money
 $(".kid1AddTimeBtn").click(function () {
 
-	kidArr[0].ScreenBal = kidArr[0].ScreenBal + (15*60*1000);
+	kidArr[0].ScreenBal = kidArr[0].ScreenBal + (15 * 60 * 1000);
 	kid1RefreshBalances();
 })
 
@@ -164,7 +165,7 @@ $(".kid1DeductTimeBtn").click(function () {
 
 	if (kidArr[0].ScreenBal >= 15) {
 
-		kidArr[0].ScreenBal = kidArr[0].ScreenBal - (15*60*1000);
+		kidArr[0].ScreenBal = kidArr[0].ScreenBal - (15 * 60 * 1000);
 		kid1RefreshBalances();
 	} else {
 		kidArr[0].ScreenBal = 0;
@@ -224,9 +225,11 @@ $(".kid1PlayPause").on("click", function () {
 	if (kid1play === true) {
 		kid1play = false;
 		kid1stopTimer();
+		player.stopVideo();
 	} else {
 		kid1play = true;
 		kid1startTimer();
+		player.playVideo();
 	}
 });
 
@@ -269,16 +272,17 @@ function onYouTubeIframeAPIReady() {
 		height: '390',
 		width: '640',
 		videoId: '_UVhAWP83TM',
+		autoplay: 0,
 		events: {
 			'onReady': onPlayerReady,
-			'onStateChange': onPlayerStateChange
+			//'onStateChange': onPlayerStateChange
 		}
 	});
 }
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
-	event.target.playVideo();
+	player.stopVideo();
 }
 
 // 5. The API calls this function when the player's state changes.
@@ -296,7 +300,7 @@ function onPlayerStateChange(event) {
 function stopVideo() {
 	player.stopVideo();
 }
-////// TODO: MVP static video URL request
+
 ////// TODO: MDP dynamic search 
 
 
@@ -313,7 +317,7 @@ $(".kid1MonReqstBtn").click(function () {
 })
 
 $(".kid1MonReqstAllBtn").click(function () {
-
+	alert("You have just requested to be paid!");
 	kidArr[0].MonReqst = kidArr[0].MonBal
 
 	kid1RefreshBalances();
@@ -354,12 +358,12 @@ function kid2RefreshBalances() {
 	$('.kid2Allowence').html("Allowence Rate: $" + kidArr[1].Allowence * 60 + "/hour");
 
 	// Money balance
-	kidArr[1].MonBal = ((kidArr[1].ScreenBal / 60 ) * kidArr[1].Allowence/1000).toFixed(2);
+	kidArr[1].MonBal = ((kidArr[1].ScreenBal / 60) * kidArr[1].Allowence / 1000).toFixed(2);
 	$('.kid2MonBal').html("Available Money: $" + (kidArr[1].MonBal));
 
 	// Screen balance
-	$('.kid2ScreenBal').html("Screen Balance: " + (moment(kidArr[1].ScreenBal + (8*60*60*1000)).format('HH:mm:ss')));
-	
+	$('.kid2ScreenBal').html("Screen Balance: " + (moment(kidArr[1].ScreenBal + (8 * 60 * 60 * 1000)).format('HH:mm:ss')));
+
 
 	$('.kid2MonReqst').html("Money request $" + kidArr[1].MonReqst);
 
@@ -404,7 +408,7 @@ $(".payKid2Btn").on("click", function () {
 
 			// Reduce available balance
 			kidArr[1].ScreenBal = (kidArr[1].ScreenBal - (JSON.parse($(this).prev().val())) / kidArr[1].Allowence)
-			
+
 		} else {
 			// If date is not in history, add new date and value
 			kidArr[1].MoneyHist.push(moment().format('YYYYMMDD'));
@@ -454,7 +458,7 @@ $(".payKid2AllBtn").on("click", function () {
 // Add time/money
 $(".kid2AddTimeBtn").click(function () {
 
-	kidArr[1].ScreenBal = kidArr[1].ScreenBal + (15*60*1000);
+	kidArr[1].ScreenBal = kidArr[1].ScreenBal + (15 * 60 * 1000);
 	kid2RefreshBalances();
 })
 
@@ -463,7 +467,7 @@ $(".kid2DeductTimeBtn").click(function () {
 
 	if (kidArr[1].ScreenBal >= 15) {
 
-		kidArr[1].ScreenBal = kidArr[1].ScreenBal - (15*60*1000);
+		kidArr[1].ScreenBal = kidArr[1].ScreenBal - (15 * 60 * 1000);
 		kid2RefreshBalances();
 	} else {
 		kidArr[1].ScreenBal = 0;
@@ -612,7 +616,7 @@ $(".kid2MonReqstBtn").click(function () {
 })
 
 $(".kid2MonReqstAllBtn").click(function () {
-
+	alert("You have just requested to be paid!");
 	kidArr[1].MonReqst = kidArr[1].MonBal
 
 	kid2RefreshBalances();

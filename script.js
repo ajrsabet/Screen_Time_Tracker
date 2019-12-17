@@ -386,7 +386,7 @@ function onYouTubeIframeAPIReady() {
 		height: '390',
 		width: '640',
 		videoId: '_UVhAWP83TM',
-		autoplay: 0,
+		autoplay: 1,
 		events: {
 			'onReady': onPlayerReady,
 			//'onStateChange': onPlayerStateChange
@@ -455,51 +455,51 @@ $(".kid1SaveBtn").click(function () {
 	kid1Refresh();
 })
 
-$(".spanCircleKid1Pink").click(function () {
-	kidArr[0].Theme = "pink"
+$(".spanCircleKidPurple").click(function () {
+	kidArr[0].Theme = "purple"
 	kid1Refresh();
 	updateTheme();
 	console.log(kidArr[0].Theme);
 
 })
 
-$(".spanCircleKid1Blue").click(function () {
+$(".spanCircleKidGreen").click(function () {
+	kidArr[0].Theme = "green"
+	kid1Refresh();
+	updateTheme();
+	console.log(kidArr[0].Theme);
+})
+
+$(".spanCircleKidBlue").click(function () {
 	kidArr[0].Theme = "blue"
 	kid1Refresh();
 	updateTheme();
 	console.log(kidArr[0].Theme);
 })
 
-$(".spanCircleKid1Orange").click(function () {
-	kidArr[0].Theme = "orange"
-	kid1Refresh();
-	updateTheme();
-	console.log(kidArr[0].Theme);
-})
-
-$(".spanCircleKid1Black").click(function () {
-	kidArr[0].Theme = "black"
+$(".spanCircleKidYellow").click(function () {
+	kidArr[0].Theme = "yellow"
 	updateTheme();
 	kid1Refresh();
 	console.log(kidArr[0].Theme);
 })
 
 function updateTheme() {
-	var themeClassArr = [$(".green"),$(".pink"),$(".blue"),$(".orange"),$(".black")]
+	var themeClassArr = [$(".green"),$(".blue"),$(".deep-purple"),$(".light-green"),$(".yellow")]
 	for (let i = 0; i < themeClassArr.length; i++) {
 			
-	if (kidArr[0].Theme === "pink") {
-			themeClassArr[i].addClass('pink');
-			themeClassArr[i].removeClass('green blue orange black white-text');
-		} else if (kidArr[0].Theme === "blue") {
+	if (kidArr[0].Theme === "purple") {
+			themeClassArr[i].addClass('deep-purple lighten-3');
+			themeClassArr[i].removeClass('green light-green lighten-2 orange yellow lighten-1');
+		} else if (kidArr[0].Theme === "green") {
 			themeClassArr[i].addClass('blue');
-			themeClassArr[i].removeClass('green pink orange black white-text');
+			themeClassArr[i].removeClass('green deep-purple lighten-3 orange yellow lighten-1');
 		} else if (kidArr[0].Theme === "orange") {
 			themeClassArr[i].addClass('orange');
-			themeClassArr[i].removeClass('green pink blue black white-text');
-		} else if (kidArr[0].Theme === "black") {
-			themeClassArr[i].addClass('black white-text');
-			themeClassArr[i].removeClass('green pink blue orange');
+			themeClassArr[i].removeClass('green deep-purple lighten-3 light-green lighten-2 yellow lighten-1');
+		} else if (kidArr[0].Theme === "yellow") {
+			themeClassArr[i].addClass('yellow lighten-1');
+			themeClassArr[i].removeClass('green deep-purple lighten-3 light-green lighten-2 orange');
 		}
 }
 }
@@ -752,27 +752,27 @@ function kid2stopTimer() {
 
 //// TODO: API Youtube LH
 // 2. This code loads the IFrame Player API code asynchronously.
-var tag = document.createElement('script');
+// var tag = document.createElement('script');
 
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+// tag.src = "https://www.youtube.com/iframe_api";
+// var firstScriptTag = document.getElementsByTagName('script')[0];
+// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-// 3. This function creates an <iframe> (and YouTube player)
-//    after the API code downloads.
-var player;
+// // 3. This function creates an <iframe> (and YouTube player)
+// //    after the API code downloads.
+// var player;
 
-function onYouTubeIframeAPIReady() {
-	player = new YT.Player('player', {
-		height: '390',
-		width: '640',
-		videoId: '_UVhAWP83TM',
-		events: {
-			'onReady': onPlayerReady,
-			'onStateChange': onPlayerStateChange
-		}
-	});
-}
+// function onYouTubeIframeAPIReady() {
+// 	player = new YT.Player('player', {
+// 		height: '390',
+// 		width: '640',
+// 		videoId: '_UVhAWP83TM',
+// 		events: {
+// 			'onReady': onPlayerReady,
+// 			'onStateChange': onPlayerStateChange
+// 		}
+// 	});
+// }
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {

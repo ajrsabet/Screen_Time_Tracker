@@ -1,6 +1,7 @@
 /////////////////// Materialize JS /////////////////////////
 $(document).ready(function () {
 	$(".dropdown-trigger").dropdown();
+	player.stopVideo();
 })
 
 
@@ -59,6 +60,7 @@ function kid1Refresh() {
 
 	// Screen balance
 	$('.kid1ScreenBal').html("Screen Balance: " + (moment(kidArr[0].ScreenBal + (8 * 60 * 60 * 1000)).format('HH:mm:ss')));
+
 
 	$('.kid1MonReqst').html("Money request $" + kidArr[0].MonReqst);
 
@@ -154,6 +156,7 @@ $(".payKid1AllBtn").on("click", function () {
 $(".kid1AddTimeBtn").click(function () {
 
 	kidArr[0].ScreenBal = kidArr[0].ScreenBal + (15 * 60 * 1000);
+
 	kid1Refresh();
 })
 
@@ -163,7 +166,9 @@ $(".kid1DeductTimeBtn").click(function () {
 	if (kidArr[0].ScreenBal >= 15) {
 
 		kidArr[0].ScreenBal = kidArr[0].ScreenBal - (15 * 60 * 1000);
+
 		kid1Refresh();
+
 	} else {
 		kidArr[0].ScreenBal = 0;
 		alert("There is less than 15 minutes remaining. The balance is set to 0")
@@ -222,9 +227,11 @@ $(".kid1PlayPause").on("click", function () {
 	if (kid1play === true) {
 		kid1play = false;
 		kid1stopTimer();
+		player.stopVideo();
 	} else {
 		kid1play = true;
 		kid1startTimer();
+		player.playVideo();
 	}
 });
 
@@ -267,16 +274,17 @@ function onYouTubeIframeAPIReady() {
 		height: '390',
 		width: '640',
 		videoId: '_UVhAWP83TM',
+		autoplay: 0,
 		events: {
 			'onReady': onPlayerReady,
-			'onStateChange': onPlayerStateChange
+			//'onStateChange': onPlayerStateChange
 		}
 	});
 }
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
-	event.target.playVideo();
+	player.stopVideo();
 }
 
 // 5. The API calls this function when the player's state changes.
@@ -295,7 +303,7 @@ function stopVideo() {
 	player.stopVideo();
 
 }
-////// TODO: MVP static video URL request
+
 ////// TODO: MDP dynamic search 
 
 
@@ -312,7 +320,7 @@ $(".kid1MonReqstBtn").click(function () {
 })
 
 $(".kid1MonReqstAllBtn").click(function () {
-
+	alert("You have just requested to be paid!");
 	kidArr[0].MonReqst = kidArr[0].MonBal
 
 	kid1Refresh();
@@ -691,7 +699,7 @@ $(".kid2MonReqstBtn").click(function () {
 })
 
 $(".kid2MonReqstAllBtn").click(function () {
-
+	alert("You have just requested to be paid!");
 	kidArr[1].MonReqst = kidArr[1].MonBal
 
 	kid2RefreshBalances();

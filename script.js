@@ -1,5 +1,8 @@
 /////////////////// Materialize JS /////////////////////////
-
+$(document).ready(function () {
+	$(".dropdown-trigger").dropdown();
+	player.stopVideo();
+})
 
 
 
@@ -81,7 +84,7 @@ function kid1Refresh() {
 //         datasets: [{
 // 			label: 'Time/Money Consumed over Time',
 // 			// insert data values for appropriate dates/times 
-//             data: [kidArr[0].MoneyHist, 19, 3, 5, 2, 3],
+//             data: [kid1MoneyHist, 19, 3, 5, 2, 3],
 //             backgroundColor: [
 //                 'rgba(255, 99, 132, 0.2)',
 //                 'rgba(54, 162, 235, 0.2)',
@@ -120,7 +123,7 @@ function kid1Refresh() {
 //         labels: ['12/1', '12/8', '12/15', '12/22', '12/29'],
 //         datasets: [{
 //             label: '# of Votes',
-//             data: [kidArr[0].MoneyHist, 19, 3, 5, 2, 3],
+//             data: [kid1MoneyHist, 19, 3, 5, 2, 3],
 //             backgroundColor: [
 //                 'rgba(255, 99, 132, 0.2)',
 //                 'rgba(54, 162, 235, 0.2)',
@@ -270,31 +273,60 @@ var saveBtn = $(".saveBtn");
 // var age = $("");
 // insert value for background input
 
-var searchInput = "dogs";
-var queryURL = "https://api.unsplash.com/search/photos?query=" + searchInput + "&client_id=e95ecaea5f2f22854ddc21c0f047145e88a13a1759d8a88737ec5affafc9ead4";
+// var populated = false;
 
-$(document).ready(function () {
+$(".imageSearch").on("submit", function (event) {
+	event.preventDefault();
+
+	// if (populated=true){
+	// 	$(".imageHolder").empty();
+	// 	populated = false
+	// } else {
+
+	var searchInput = $(".searchInput").val();
+	// console.log(searchInput);
+	
+	var queryURL = "https://api.unsplash.com/search/photos?query=" + searchInput + "&client_id=e95ecaea5f2f22854ddc21c0f047145e88a13a1759d8a88737ec5affafc9ead4";
+	$("kid-background-holder").empty();
 	$.ajax({
 		allRoutes: true,
 		url: queryURL,
 		method: "GET"
 	}).then(function (response) {
-		console.log(response.results[0].urls.thumb);
-		var imageHolder = $(".kid-background-image");
-		// var searchImage = $("<img>");
+		for (let i = 0; i <response.results.length; i++) {
+			var imageData = response.results[i].urls.thumb;
+			
+			// console.log(imageData);
+			var imageHolder = $(".kid-background-holder");
+			var searchImage = $("<img>");
+			
+			searchImage.attr("src", (imageData));
+			searchImage.attr("style", "margin=10px");
+			searchImage.addClass("kid-background-image");
+			searchImage.addClass("generatedImg");
+			imageHolder.append(searchImage);
 
-		imageHolder.attr("src", (response.results[0].urls.thumb));
-		// imageHolder.append(imageHolder);
-
+		}
+		
+		$(document).on("click", ".generatedImg", function(){
+			// event.preventDefault();
+			console.log(this.src);
+			
+			kidArr[0].ImgURL=$(this.src)
+			kid1Refresh();
+			
+		});
 	});
+	// populated = true;
+// }
 });
 
-saveBtn.on("click", function () {
-	localStorage.setItem("kid1ImgURL", (kidArr[0].ImgURL))
 
-	// localStorage.setItem("kid2ImgURL", (kid2ImgURL))
+// saveBtn.on("click", function () {
 
-});
+// 	// localStorage.setItem("kid2ImgURL", (kid2ImgURL))
+
+// });
 
 
 ///// TODO: modal popout 
@@ -384,10 +416,6 @@ function stopVideo() {
 
 }
 
-// $(document).ready(function () {
-// 	$(".dropdown-trigger").dropdown();
-// 	player.stopVideo();
-// })
 ////// TODO: MDP dynamic search 
 
 
@@ -649,39 +677,39 @@ $(".kid2DeductTimeBtn").click(function () {
 // TODO: Edit/customize styles LH
 
 
-// insert class for saveBtn
-var saveBtn = $(".saveBtn");
-// insert value for name text box
-// var name = $("");
-// insert value for age text box
-// var age = $("");
-// insert value for background input
+// // insert class for saveBtn
+// var saveBtn = $(".saveBtn");
+// // insert value for name text box
+// // var name = $("");
+// // insert value for age text box
+// // var age = $("");
+// // insert value for background input
 
-var searchInput = "dogs";
-var queryURL = "https://api.unsplash.com/search/photos?query=" + searchInput + "&client_id=e95ecaea5f2f22854ddc21c0f047145e88a13a1759d8a88737ec5affafc9ead4";
+// var searchInput = "dogs";
+// var queryURL = "https://api.unsplash.com/search/photos?query=" + searchInput + "&client_id=e95ecaea5f2f22854ddc21c0f047145e88a13a1759d8a88737ec5affafc9ead4";
 
-$(document).ready(function () {
-	$.ajax({
-		allRoutes: true,
-		url: queryURL,
-		method: "GET"
-	}).then(function (response) {
-		console.log(response.results[0].urls.thumb);
-		var imageHolder = $(".kid-background-image");
-		// var searchImage = $("<img>");
+// $(document).ready(function () {
+// 	$.ajax({
+// 		allRoutes: true,
+// 		url: queryURL,
+// 		method: "GET"
+// 	}).then(function (response) {
+// 		console.log(response.results[0].urls.thumb);
+// 		var imageHolder = $(".kid-background-image");
+// 		// var searchImage = $("<img>");
 
-		imageHolder.attr("src", (response.results[0].urls.thumb));
-		// imageHolder.append(imageHolder);
+// 		imageHolder.attr("src", (response.results[0].urls.thumb));
+// 		// imageHolder.append(imageHolder);
 
-	});
-});
+// 	});
+// });
 
-saveBtn.on("click", function () {
-	localStorage.setItem("kid2ImgURL", (kidArr[1].ImgURL))
+// saveBtn.on("click", function () {
+// 	localStorage.setItem("kid2ImgURL", (kidArr[1].ImgURL))
 
-	// localStorage.setItem("kid2ImgURL", (kid2ImgURL))
+// 	// localStorage.setItem("kid2ImgURL", (kid2ImgURL))
 
-});
+// });
 
 
 ///// TODO: modal popout 

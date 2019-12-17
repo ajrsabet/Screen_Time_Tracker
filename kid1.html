@@ -10,11 +10,12 @@
   <link rel="stylesheet" href="id.css" />
   <link rel="stylesheet" href="Hover-master/hover.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <title>Kid 1 Profile</title>
+  <link rel="icon" href="images/favicon.ico">
+  <title>Kid Profile</title>
 </head>
 
 <!-- Body -->
-<body>
+<body class="body2">
   <!-- Navbar -->
   <div class="container-fluid">
     <nav class="green accent-2">
@@ -25,7 +26,7 @@
       </ul>
       <nav>
         <div class="nav-wrapper green accent-2">
-          <a href="index.html" class="brand-logo black-text">Kidstime</a>
+          <a href="index.html" class="brand-logo black-text">Pig E-Bank</a>
           <ul class="right hide-on-med-and-down">
             <!-- Dropdown Trigger -->
             <li><a class="dropdown-trigger black-text" data-target="dropdown1">Menu<i
@@ -40,19 +41,20 @@
     <img class="kid1ImgURL" src="" alt="">
 
     <div class="container">
+    
       <div class="row statsTopSpacing1">
         <div class="col s2">
         </div>
       </div>
       <!-- need to make this "edit" button take you to form.html when clicked -->
-      <div class="right-align"><a href="form.html" class="btn-floating btn-large grey pulse"><i class="material-icons">edit</i></a></div>
+      <div class="right-align edit-button"><a href="form.html" class="btn-floating btn-large grey hvr-bob"><i class="material-icons">edit</i></a></div>
       <div class="row">
         <div class="col s4"></div>
         <div class="col s4 center-align">
           <!-- Kid circle Icon thing -->
-          <a href="kid.html">
-            <span class="light-green lighten-2 spanCircleKid1 center-align hvr-bob">Kid 1</span>
-          </a>
+          
+            <span class="light-green lighten-2 spanCircleKid1 center-align">Kid 1</span>
+          
         </div>
         <div class="col s4"></div>
       </div>
@@ -65,7 +67,7 @@
         <!-- Dollar icon -->
         <div><i class="col s2 medium material-icons right-align" id="money-icon">access_alarm</i></div>
         <!-- Actual Money Input --- NEED TO PULL FROM JavaScript -->
-        <span class="col s8 green accent-2 spanOvalBar2 center-align kid1ScreenBal">
+        <span class="col s8 green accent-2 spanOvalBar2 center-align kid1ScreenBal black-text">
         </span>
         <!-- Remove BUTTON icon ---NEEED TO MAKE IT A CLICKABLE BUTTON IN JavaScript -->
         <div><i class="col s2 medium material-icons center-align hvr-bob hvr-push:hover kid1PlayPause">play_circle_outline</i></div>
@@ -74,21 +76,21 @@
         <!-- Time icon -->
         <div><i class="col s2 medium material-icons center-align" id="time-icon">attach_money</i></div>
         <!-- Actual Time Input --- NEED TO PULL FROM JavaScript -->
-        <span class="col s8 green accent-2 spanOvalBar2 center-align kid1MonBal">
+        <span class="col s8 green accent-2 spanOvalBar2 center-align kid1MonBal black-text">
         </span>
         <!-- Remove BUTTON icon ---NEEED TO MAKE IT A CLICKABLE BUTTON IN JavaScript -->
         <div><i class="col s2 medium material-icons center-align hvr-bob hvr-push:hover kid1MonReqstAllBtn">shopping_cart</i></div>
       </div>
 
       <!-- search box for youtube -->
-      <form>
+      <!-- <form>
         <div class="row">
           <div class="input-field col s12 center-align">
             <input id="input_text" type="text" data-length="10">
             <label for="input_text center-align">Search for a fun video to watch!</label>
           </div>
         </div>
-      </form>
+      </form> -->
       
       <!-- youtube --NEED TO ADD FUNCTIONALITY WITH JavaScript-->
       <div class="row">
@@ -98,20 +100,21 @@
       </div>
       
     </div>
-
-    
     <!-- bottom spacing -->
     <div class="col s2">
     </div>
     <div class="row statsBottomSpacing">
     </div>
     <br>
+
+    
     <!-- footer  -->
     <div id="footer">
       <p>© 2019 Copyright</p>
     </div>
-
+    
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
   <script src="https://api.unsplash.com/"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="materialize/js/materialize.js"></script>

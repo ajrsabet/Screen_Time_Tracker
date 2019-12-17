@@ -1,3 +1,4 @@
+
 #CHANGE_ME{
 border:solid red 1px;
 height: 200px;
@@ -81,7 +82,7 @@ width: 100%;
     font-size: 2em;
     margin: 0 auto;
 }
-.spanCircleKidPink {
+.spanCircleKidPurple {
     display: block;
     height: 10vh;
     width: 10vh;
@@ -93,7 +94,7 @@ width: 100%;
     font-size: 1em;
     margin: 0 auto;
 }
-.spanCircleKidOrange {
+.spanCircleKidGreen {
     display: block;
     height: 10vh;
     width: 10vh;
@@ -171,6 +172,8 @@ width: 100%;
     justify-content: center;
     margin: 0 auto;
     text-align: center;
+    font-size: x-large;
+    height: 7vh;
 }
 #imgController{
     height: 30%;
@@ -217,6 +220,9 @@ font-size: 1vw;
 .body{
     background-image: url("images/website_main_background.png");
 }
+.body2{
+    background-image: url("http://placekitten.com/500/500");
+}
 .blackText{
     color: black;
 }
@@ -226,10 +232,31 @@ font-size: 1vw;
 .birthdayCake1{
     margin-top: 2vh;
 }
+.birthdayCake3{
+    margin-top: 7vh;
+}
 
 .range-field{
 margin: 0;
 }
 .searchMargin{
     margin-top: 3vh;
+}
+
+#player {
+    margin-bottom: 10vh;
+}
+.container {
+    background: rgba(250, 250, 250, 0.8);
+    color: white;
+}
+
+.edit-button {
+    padding-right: 3vh;
+}
+p {
+    color: black;
+}
+.kid-background-image {
+    padding-bottom: 4vh;
 }

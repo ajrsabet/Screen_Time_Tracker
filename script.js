@@ -39,7 +39,6 @@ var kidArr = [{
 
 if (localStorage.getItem("kidArr") !== null) {
 	kidArr = JSON.parse(localStorage.getItem("kidArr"));
-	console.log(kidArr);
 }
 
 
@@ -50,24 +49,23 @@ if (localStorage.getItem("kidArr[0].ScreenBal") !== null) {
 
 
 ////////////// Refresh local storage/display ////////////
-function kid1RefreshBalances() {
+function kid1Refresh() {
 	// Allowence rate
 	$('.kid1Allowence').html("Allowence Rate: $" + kidArr[0].Allowence * 60 + "/hour");
 
 	// Money balance
-	kidArr[0].MonBal = ((kidArr[0].ScreenBal / 60 ) * kidArr[0].Allowence/1000).toFixed(2);
+	kidArr[0].MonBal = ((kidArr[0].ScreenBal / 60) * kidArr[0].Allowence / 1000).toFixed(2);
 	$('.kid1MonBal').html("Available Money: $" + (kidArr[0].MonBal));
 
 	// Screen balance
-	$('.kid1ScreenBal').html("Screen Balance: " + (moment(kidArr[0].ScreenBal + (8*60*60*1000)).format('HH:mm:ss')));
-	
+	$('.kid1ScreenBal').html("Screen Balance: " + (moment(kidArr[0].ScreenBal + (8 * 60 * 60 * 1000)).format('HH:mm:ss')));
 
 	$('.kid1MonReqst').html("Money request $" + kidArr[0].MonReqst);
 
+	$('.kid1Name').html(kidArr[0].Name);
+
 	// Local storage Money request total////////////
 	localStorage.setItem("kidArr", JSON.stringify(kidArr));
-	console.log(kidArr);
-	///////////////////////////////////
 }
 
 
@@ -105,7 +103,7 @@ $(".payKid1Btn").on("click", function () {
 
 			// Reduce available balance
 			kidArr[0].ScreenBal = (kidArr[0].ScreenBal - (JSON.parse($(this).prev().val())) / kidArr[0].Allowence)
-			
+
 		} else {
 			// If date is not in history, add new date and value
 			kidArr[0].MoneyHist.push(moment().format('YYYYMMDD'));
@@ -124,7 +122,7 @@ $(".payKid1Btn").on("click", function () {
 			kidArr[0].MonReqst = kidArr[0].MonReqst - JSON.parse($(this).prev().val());
 			kidArr[0].ScreenBal = kidArr[0].ScreenBal - (JSON.parse($(this).prev().val()) / kidArr[0].Allowence);
 		}
-		kid1RefreshBalances();
+		kid1Refresh();
 	}
 });
 
@@ -148,15 +146,15 @@ $(".payKid1AllBtn").on("click", function () {
 	// Update kidArr[0].ScreenBal
 	kidArr[0].MonReqst = 0;
 	kidArr[0].ScreenBal = 0;
-	kid1RefreshBalances();
+	kid1Refresh();
 });
 
 
 // Add time/money
 $(".kid1AddTimeBtn").click(function () {
 
-	kidArr[0].ScreenBal = kidArr[0].ScreenBal + (15*60*1000);
-	kid1RefreshBalances();
+	kidArr[0].ScreenBal = kidArr[0].ScreenBal + (15 * 60 * 1000);
+	kid1Refresh();
 })
 
 // Deduct time/money
@@ -164,8 +162,8 @@ $(".kid1DeductTimeBtn").click(function () {
 
 	if (kidArr[0].ScreenBal >= 15) {
 
-		kidArr[0].ScreenBal = kidArr[0].ScreenBal - (15*60*1000);
-		kid1RefreshBalances();
+		kidArr[0].ScreenBal = kidArr[0].ScreenBal - (15 * 60 * 1000);
+		kid1Refresh();
 	} else {
 		kidArr[0].ScreenBal = 0;
 		alert("There is less than 15 minutes remaining. The balance is set to 0")
@@ -236,7 +234,7 @@ function kid1startTimer() {
 		if (kidArr[0].ScreenBal >= 0) {
 			kidArr[0].ScreenBal = kidArr[0].ScreenBal - 1000;
 
-			kid1RefreshBalances();
+			kid1Refresh();
 		} else {
 			// Stop timer if time runs out.
 			clearInterval(myInterval)
@@ -295,6 +293,7 @@ function onPlayerStateChange(event) {
 
 function stopVideo() {
 	player.stopVideo();
+
 }
 ////// TODO: MVP static video URL request
 ////// TODO: MDP dynamic search 
@@ -308,7 +307,7 @@ $(".kid1MonReqstBtn").click(function () {
 	} else {
 		kidArr[0].MonReqst = kidArr[0].MonReqst + JSON.parse($(this).prev().val())
 
-		kid1RefreshBalances();
+		kid1Refresh();
 	}
 })
 
@@ -316,13 +315,85 @@ $(".kid1MonReqstAllBtn").click(function () {
 
 	kidArr[0].MonReqst = kidArr[0].MonBal
 
-	kid1RefreshBalances();
+	kid1Refresh();
 
 })
 
 /////////////////// Modal edit form /////////////////
 // TODO: Change name, age 
 //// TODO: Local storage AJS
+$(".kid1SaveBtn").click(function () {
+	if ($(".kid1Name").val !== null) {
+		kidArr[0].Name = $(".kid1Name").val();
+	}
+	if ($(".kid1Age").val !== null) {
+		kidArr[0].Age = $(".kid1Age").val();
+	}
+	// if ($(".kid1Theme").val !== null) {
+	// 	kidArr[0].Theme = $(".kid1Theme").val();
+	// }
+	kid1Refresh();
+})
+
+$(".spanCircleKid1Pink").click(function () {
+	kidArr[0].Theme = "pink"
+	kid1Refresh();
+	updateTheme();
+})
+
+$(".spanCircleKid1Blue").click(function () {
+	kidArr[0].Theme = "blue"
+	kid1Refresh();
+	updateTheme();
+})
+
+$(".spanCircleKid1Orange").click(function () {
+	kidArr[0].Theme = "orange"
+	kid1Refresh();
+	updateTheme();
+})
+
+$(".spanCircleKid1Black").click(function () {
+	kidArr[0].Theme = "black"
+	updateTheme();
+	kid1Refresh();
+})
+
+function updateTheme() {
+		
+	for(i = 0; i < $(".green").length; i++) {
+	  if (kidArr[0].Theme === "pink") {
+		$(".green"[i]).css("background-color", "#e91e63 !important")
+	} else if (kidArr[0].Theme === "blue"){ 
+		$(".green"[i]).css("background-color", "#2196F3 !important")
+	} else if (kidArr[0].Theme === "orange"){
+		$(".green"[i]).css("background-color", "#ff9800 !important")
+	} else if (kidArr[0].Theme === "orange"){
+		$(".green"[i]).css("background-color", "#000000 !important")
+	}
+	}
+  }
+
+//   function updateTheme() {
+// 	var green = document.getElementsByClassName('green');
+// 	for(i = 0; i < green.length; i++) {
+// 	  'blue';
+// 	  if (kidArr[0].Theme === "pink") {
+// 		  console.log("pink");
+		  
+// 		green[i].style.backgroundColor =  "#e91e63"
+// 	} else if (kidArr[0].Theme === "blue"){ 
+// 		console.log("blue");
+// 		green[i].style.backgroundColor =  "#2196F3"
+// 	} else if (kidArr[0].Theme === "orange"){
+// 		console.log("orange");
+// 		green[i].style.backgroundColor =  "#ff9800"
+// 	} else if (kidArr[0].Theme === "black"){
+// 		console.log("black");
+// 		green[i].style.backgroundColor =  "#000000"
+// 	}
+// 	}
+//   }
 
 //// TODO: Display
 
@@ -338,7 +409,7 @@ $(".kid1MonReqstAllBtn").click(function () {
 // TODO: Change background LH
 //// TODO: API unsplash
 
-kid1RefreshBalances();
+kid1Refresh();
 
 
 
@@ -354,19 +425,17 @@ function kid2RefreshBalances() {
 	$('.kid2Allowence').html("Allowence Rate: $" + kidArr[1].Allowence * 60 + "/hour");
 
 	// Money balance
-	kidArr[1].MonBal = ((kidArr[1].ScreenBal / 60 ) * kidArr[1].Allowence/1000).toFixed(2);
+	kidArr[1].MonBal = ((kidArr[1].ScreenBal / 60) * kidArr[1].Allowence / 1000).toFixed(2);
 	$('.kid2MonBal').html("Available Money: $" + (kidArr[1].MonBal));
 
 	// Screen balance
-	$('.kid2ScreenBal').html("Screen Balance: " + (moment(kidArr[1].ScreenBal + (8*60*60*1000)).format('HH:mm:ss')));
-	
+	$('.kid2ScreenBal').html("Screen Balance: " + (moment(kidArr[1].ScreenBal + (8 * 60 * 60 * 1000)).format('HH:mm:ss')));
+
 
 	$('.kid2MonReqst').html("Money request $" + kidArr[1].MonReqst);
 
 	// Local storage Money request total////////////
 	localStorage.setItem("kidArr", JSON.stringify(kidArr));
-	console.log(kidArr);
-	///////////////////////////////////
 }
 
 
@@ -404,7 +473,7 @@ $(".payKid2Btn").on("click", function () {
 
 			// Reduce available balance
 			kidArr[1].ScreenBal = (kidArr[1].ScreenBal - (JSON.parse($(this).prev().val())) / kidArr[1].Allowence)
-			
+
 		} else {
 			// If date is not in history, add new date and value
 			kidArr[1].MoneyHist.push(moment().format('YYYYMMDD'));
@@ -454,7 +523,7 @@ $(".payKid2AllBtn").on("click", function () {
 // Add time/money
 $(".kid2AddTimeBtn").click(function () {
 
-	kidArr[1].ScreenBal = kidArr[1].ScreenBal + (15*60*1000);
+	kidArr[1].ScreenBal = kidArr[1].ScreenBal + (15 * 60 * 1000);
 	kid2RefreshBalances();
 })
 
@@ -463,7 +532,7 @@ $(".kid2DeductTimeBtn").click(function () {
 
 	if (kidArr[1].ScreenBal >= 15) {
 
-		kidArr[1].ScreenBal = kidArr[1].ScreenBal - (15*60*1000);
+		kidArr[1].ScreenBal = kidArr[1].ScreenBal - (15 * 60 * 1000);
 		kid2RefreshBalances();
 	} else {
 		kidArr[1].ScreenBal = 0;
@@ -638,11 +707,3 @@ $(".kid2MonReqstAllBtn").click(function () {
 //// TODO: API unsplash
 
 kid2RefreshBalances();
-
-
-
-///////////////////////////////////////////////////////////////////////
-////////////////////                    ///////////////////////////////
-////////////////////       KID 2        ///////////////////////////////
-////////////////////                    ///////////////////////////////
-///////////////////////////////////////////////////////////////////////

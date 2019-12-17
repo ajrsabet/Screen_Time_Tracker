@@ -81,7 +81,7 @@ width: 100%;
     font-size: 2em;
     margin: 0 auto;
 }
-.spanCircleKidPink {
+.spanCircleKid1Pink {
     display: block;
     height: 10vh;
     width: 10vh;
@@ -93,7 +93,7 @@ width: 100%;
     font-size: 1em;
     margin: 0 auto;
 }
-.spanCircleKidOrange {
+.spanCircleKid1Orange {
     display: block;
     height: 10vh;
     width: 10vh;
@@ -105,7 +105,7 @@ width: 100%;
     font-size: 1em;
     margin: 0 auto;
 }
-.spanCircleKidBlue {
+.spanCircleKid1Blue {
     display: block;
     height: 10vh;
     width: 10vh;
@@ -117,7 +117,7 @@ width: 100%;
     font-size: 1em;
     margin: 0 auto;
 }
-.spanCircleKidBlack {
+.spanCircleKid1Black {
     display: block;
     height: 10vh;
     width: 10vh;
@@ -129,7 +129,54 @@ width: 100%;
     font-size: 1em;
     margin: 0 auto;
 }
-
+.spanCircleKid2Pink {
+    display: block;
+    height: 10vh;
+    width: 10vh;
+    line-height: 10vh;
+    color: black;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1em;
+    margin: 0 auto;
+}
+.spanCircleKid2Orange {
+    display: block;
+    height: 10vh;
+    width: 10vh;
+    line-height: 10vh;
+    color: black;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1em;
+    margin: 0 auto;
+}
+.spanCircleKid2Blue {
+    display: block;
+    height: 10vh;
+    width: 10vh;
+    line-height: 10vh;
+    color: black;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1em;
+    margin: 0 auto;
+}
+.spanCircleKid2Black {
+    display: block;
+    height: 10vh;
+    width: 10vh;
+    line-height: 10vh;
+    color: white;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1em;
+    margin: 0 auto;
+}
 #mainslogan{
     margin-top: 15vh;
     text-align: center;

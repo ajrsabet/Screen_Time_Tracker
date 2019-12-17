@@ -44,9 +44,9 @@ width: 100%;
     font-size: 2em;
     margin: 0 auto;
     margin-top: 20vh;
+  
 }
 .spanCircleParrent {
-    display: block;
     height: 30vh;
     width: 30vh;
     line-height: 30vh;
@@ -56,7 +56,10 @@ width: 100%;
     text-align: center;
     font-size: 2em;
     margin: 0 auto;
-
+    float: left;
+    position: relative;
+    margin-left: 5%;
+    
 }
 .spanCircleKid1 {
     display: block;
@@ -83,7 +86,37 @@ width: 100%;
     margin: 0 auto;
 }
 
+.spanCircle2Kid1 {
+    height: 30vh;
+    width: 30vh;
+    line-height: 30vh;
+    color: black;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2em;
+    float: left;
+    position: relative;
+    margin-left: 20%;
+    
+}
+.spanCircle2Kid2 {
+    height: 30vh;
+    width: 30vh;
+    line-height: 30vh;
+    color: black;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2em;
+    float: left;
+    position: relative;
+    margin-left: 5%;
+    
+}
+
 .spanCircleKidPurple {
+
     display: block;
     height: 10vh;
     width: 10vh;
@@ -138,11 +171,12 @@ width: 100%;
 }
 
 #mainslogan{
-    margin-top: 15vh;
+    margin-top: 10vh;
     text-align: center;
+    font-size: 4vh;
 }
 #homepageKids{
-    margin-top: 40vh;
+    margin-top: 20vh;
 }
 .homepageEmptySpace{
     height: 30vh;
@@ -162,12 +196,11 @@ width: 100%;
 }
 .spanOvalBar{
     display: block;
-    border-radius: 25px;
+    border-radius: 15px;
     padding: 15px;
-    width: 100%;
+    width: 90%;
     justify-content: center;
     margin: 0 auto;
-    /* margin-top: 10vh; */
     text-align: center;
 }
 .spanOvalBar2{
@@ -202,7 +235,7 @@ width: 100%;
     margin-right: 8vw;
 }
 .homeManange{
-    margin-top: 35vh;
+    margin-top: 45vh;
     text-align: center;
     font-size: 1vw;
 }
@@ -249,6 +282,49 @@ margin: 0;
     margin-top: 3vh;
 }
 
+.spanOvalBarTitle{
+    display: block;
+    border-radius: 25px;
+    padding: 15px;
+    width: 60%;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 5vh;
+}
+#imgPig{
+    display: block;
+    height: 45%;
+    width: 45%;
+    margin: 0 auto;
+    margin-top: 16vh;
+}
+.websiteName{
+    margin-left: 2vw;
+}
+.figureSize{
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+}
+.figureSize1{
+    width: 22%;
+    margin: 0 auto;
+    display: block;
+}
+.figureSize2{
+    width: 35%;
+    margin: 0 auto;
+    display: block;
+}
+.noPadding{
+    padding: 0;
+}
+.circleMargin{
+    margin-top: 10vh;
+}
+
+
 #player {
     margin-bottom: 10vh;
 }
@@ -266,3 +342,4 @@ p {
 .kid-background-image {
     padding-bottom: 4vh;
 }
+

@@ -143,7 +143,7 @@ width: 100%;
     margin: 0 auto;
     background-color: #ff9800
 }
-.spanCircleKid1Blue {
+.spanCircleKidBlue {
     display: block;
     height: 10vh;
     width: 10vh;
@@ -156,12 +156,12 @@ width: 100%;
     margin: 0 auto;
     background-color: #448AFF 
 }
-.spanCircleKid1Black {
+.spanCircleKidYellow {
     display: block;
     height: 10vh;
     width: 10vh;
     line-height: 10vh;
-    color: white;
+    color: black;
     -moz-border-radius: 50%;
     border-radius: 50%;
     text-align: center;
@@ -212,7 +212,9 @@ width: 100%;
     margin: 0 auto;
     text-align: center;
     font-size: x-large;
-    height: 7vh;
+    padding-top: 5vh;
+    height: 5vh;
+    margin-top: 2vh;
 }
 #imgController{
     height: 30%;

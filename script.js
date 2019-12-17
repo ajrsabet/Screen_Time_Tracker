@@ -489,17 +489,20 @@ function updateTheme() {
 	for (let i = 0; i < themeClassArr.length; i++) {
 			
 	if (kidArr[0].Theme === "purple") {
+		themeClassArr[i].removeClass('green light-green lighten-2 orange yellow blue lighten-1');
 			themeClassArr[i].addClass('deep-purple lighten-3');
-			themeClassArr[i].removeClass('green light-green lighten-2 orange yellow lighten-1');
+
 		} else if (kidArr[0].Theme === "green") {
-			themeClassArr[i].addClass('blue');
-			themeClassArr[i].removeClass('green deep-purple lighten-3 orange yellow lighten-1');
-		} else if (kidArr[0].Theme === "orange") {
-			themeClassArr[i].addClass('orange');
+			themeClassArr[i].removeClass('deep-purple lighten-3 orange yellow lighten-1');
+			themeClassArr[i].addClass('light-green lighten-2');
+
+		} else if (kidArr[0].Theme === "blue") {
 			themeClassArr[i].removeClass('green deep-purple lighten-3 light-green lighten-2 yellow lighten-1');
+			themeClassArr[i].addClass('blue lighten-2');
+
 		} else if (kidArr[0].Theme === "yellow") {
-			themeClassArr[i].addClass('yellow lighten-1');
 			themeClassArr[i].removeClass('green deep-purple lighten-3 light-green lighten-2 orange');
+			themeClassArr[i].addClass('yellow lighten-1');
 		}
 }
 }
@@ -775,25 +778,25 @@ function kid2stopTimer() {
 // }
 
 // 4. The API will call this function when the video player is ready.
-function onPlayerReady(event) {
-	event.target.playVideo();
-}
+// function onPlayerReady(event) {
+// 	event.target.playVideo();
+// }
 
 // 5. The API calls this function when the player's state changes.
 //    The function indicates that when playing a video (state=1),
 //    the player should play for six seconds and then stop.
-var done = false;
+// var done = false;
 
-function onPlayerStateChange(event) {
-	if (event.data == YT.PlayerState.PLAYING && !done) {
-		// setTimeout(stopVideo, 6000);
-		done = true;
-	}
-}
+// function onPlayerStateChange(event) {
+// 	if (event.data == YT.PlayerState.PLAYING && !done) {
+// 		// setTimeout(stopVideo, 6000);
+// 		done = true;
+// 	}
+// }
 
-function stopVideo() {
-	player.stopVideo();
-}
+// function stopVideo() {
+// 	player.stopVideo();
+// }
 ////// TODO: MVP static video URL request
 ////// TODO: MDP dynamic search 
 

@@ -40,18 +40,17 @@ var kidArr = [{
 
 if (localStorage.getItem("kidArr") !== null) {
 	kidArr = JSON.parse(localStorage.getItem("kidArr"));
-	console.log(kidArr);
 }
 
-
+var ThemeArr = ["pink", "blue", "orange", "black"]
 ////////////////// Retrieve local storage /////////////
-if (localStorage.getItem("kidArr[0].ScreenBal") !== null) {
-	kidArr[0].ScreenBal = JSON.parse(localStorage.getItem("kidArr[0].ScreenBal"));
-}
+// if (localStorage.getItem("kidArr[0].ScreenBal") !== null) {
+// 	kidArr[0].ScreenBal = JSON.parse(localStorage.getItem("kidArr[0].ScreenBal"));
+// }
 
 
 ////////////// Refresh local storage/display ////////////
-function kid1RefreshBalances() {
+function kid1Refresh() {
 	// Allowence rate
 	$('.kid1Allowence').html("Allowence Rate: $" + kidArr[0].Allowence * 60 + "/hour");
 
@@ -65,10 +64,10 @@ function kid1RefreshBalances() {
 
 	$('.kid1MonReqst').html("Money request $" + kidArr[0].MonReqst);
 
+	$('.kid1Name').html(kidArr[0].Name);
+
 	// Local storage Money request total////////////
 	localStorage.setItem("kidArr", JSON.stringify(kidArr));
-	console.log(kidArr);
-	///////////////////////////////////
 }
 
 
@@ -208,7 +207,7 @@ $(".payKid1Btn").on("click", function () {
 			kidArr[0].MonReqst = kidArr[0].MonReqst - JSON.parse($(this).prev().val());
 			kidArr[0].ScreenBal = kidArr[0].ScreenBal - (JSON.parse($(this).prev().val()) / kidArr[0].Allowence);
 		}
-		kid1RefreshBalances();
+		kid1Refresh();
 	}
 });
 
@@ -232,7 +231,7 @@ $(".payKid1AllBtn").on("click", function () {
 	// Update kidArr[0].ScreenBal
 	kidArr[0].MonReqst = 0;
 	kidArr[0].ScreenBal = 0;
-	kid1RefreshBalances();
+	kid1Refresh();
 });
 
 
@@ -240,7 +239,8 @@ $(".payKid1AllBtn").on("click", function () {
 $(".kid1AddTimeBtn").click(function () {
 
 	kidArr[0].ScreenBal = kidArr[0].ScreenBal + (15 * 60 * 1000);
-	kid1RefreshBalances();
+
+	kid1Refresh();
 })
 
 // Deduct time/money
@@ -249,7 +249,9 @@ $(".kid1DeductTimeBtn").click(function () {
 	if (kidArr[0].ScreenBal >= 15) {
 
 		kidArr[0].ScreenBal = kidArr[0].ScreenBal - (15 * 60 * 1000);
-		kid1RefreshBalances();
+
+		kid1Refresh();
+
 	} else {
 		kidArr[0].ScreenBal = 0;
 		alert("There is less than 15 minutes remaining. The balance is set to 0")
@@ -322,7 +324,7 @@ function kid1startTimer() {
 		if (kidArr[0].ScreenBal >= 0) {
 			kidArr[0].ScreenBal = kidArr[0].ScreenBal - 1000;
 
-			kid1RefreshBalances();
+			kid1Refresh();
 		} else {
 			// Stop timer if time runs out.
 			clearInterval(myInterval)
@@ -382,6 +384,7 @@ function onPlayerStateChange(event) {
 
 function stopVideo() {
 	player.stopVideo();
+
 }
 
 ////// TODO: MDP dynamic search 
@@ -395,7 +398,7 @@ $(".kid1MonReqstBtn").click(function () {
 	} else {
 		kidArr[0].MonReqst = kidArr[0].MonReqst + JSON.parse($(this).prev().val())
 
-		kid1RefreshBalances();
+		kid1Refresh();
 	}
 })
 
@@ -403,13 +406,95 @@ $(".kid1MonReqstAllBtn").click(function () {
 	alert("You have just requested to be paid!");
 	kidArr[0].MonReqst = kidArr[0].MonBal
 
-	kid1RefreshBalances();
+	kid1Refresh();
 
 })
 
 /////////////////// Modal edit form /////////////////
 // TODO: Change name, age 
 //// TODO: Local storage AJS
+$(".kid1SaveBtn").click(function () {
+	if ($(".kid1Name").val !== null) {
+		kidArr[0].Name = $(".kid1Name").val();
+	}
+	if ($(".kid1Age").val !== null) {
+		kidArr[0].Age = $(".kid1Age").val();
+	}
+	// if ($(".kid1Theme").val !== null) {
+	// 	kidArr[0].Theme = $(".kid1Theme").val();
+	// }
+	kid1Refresh();
+})
+
+$(".spanCircleKid1Pink").click(function () {
+	kidArr[0].Theme = "pink"
+	kid1Refresh();
+	updateTheme();
+	console.log(kidArr[0].Theme);
+
+})
+
+$(".spanCircleKid1Blue").click(function () {
+	kidArr[0].Theme = "blue"
+	kid1Refresh();
+	updateTheme();
+	console.log(kidArr[0].Theme);
+})
+
+$(".spanCircleKid1Orange").click(function () {
+	kidArr[0].Theme = "orange"
+	kid1Refresh();
+	updateTheme();
+	console.log(kidArr[0].Theme);
+})
+
+$(".spanCircleKid1Black").click(function () {
+	kidArr[0].Theme = "black"
+	updateTheme();
+	kid1Refresh();
+	console.log(kidArr[0].Theme);
+})
+
+function updateTheme() {
+	var themeClassArr = [$(".green"),$(".pink"),$(".blue"),$(".orange"),$(".black")]
+	for (let i = 0; i < themeClassArr.length; i++) {
+			
+	if (kidArr[0].Theme === "pink") {
+			themeClassArr[i].addClass('pink');
+			themeClassArr[i].removeClass('green blue orange black white-text');
+		} else if (kidArr[0].Theme === "blue") {
+			themeClassArr[i].addClass('blue');
+			themeClassArr[i].removeClass('green pink orange black white-text');
+		} else if (kidArr[0].Theme === "orange") {
+			themeClassArr[i].addClass('orange');
+			themeClassArr[i].removeClass('green pink blue black white-text');
+		} else if (kidArr[0].Theme === "black") {
+			themeClassArr[i].addClass('black white-text');
+			themeClassArr[i].removeClass('green pink blue orange');
+		}
+}
+}
+
+//   function updateTheme() {
+// 	var green = document.getElementsByClassName('green');
+// 	for(i = 0; i < green.length; i++) {
+// 	  'blue';
+// 	  if (kidArr[0].Theme === "pink") {
+// 		  console.log("pink");
+
+// 		green[i].style.backgroundColor =  "#e91e63"
+// 	} else if (kidArr[0].Theme === "blue"){ 
+// 		console.log("blue");
+// 		green[i].style.backgroundColor =  "#2196F3"
+// 	} else if (kidArr[0].Theme === "orange"){
+// 		console.log("orange");
+// 		green[i].style.backgroundColor =  "#ff9800"
+// 	} else if (kidArr[0].Theme === "black"){
+// 		console.log("black");
+// 		green[i].style.backgroundColor =  "#000000"
+// 	}
+// 	}
+//   }
 
 //// TODO: Display
 
@@ -425,7 +510,7 @@ $(".kid1MonReqstAllBtn").click(function () {
 // TODO: Change background LH
 //// TODO: API unsplash
 
-kid1RefreshBalances();
+kid1Refresh();
 
 
 
@@ -452,8 +537,6 @@ function kid2RefreshBalances() {
 
 	// Local storage Money request total////////////
 	localStorage.setItem("kidArr", JSON.stringify(kidArr));
-	console.log(kidArr);
-	///////////////////////////////////
 }
 
 
@@ -725,11 +808,3 @@ $(".kid2MonReqstAllBtn").click(function () {
 //// TODO: API unsplash
 
 kid2RefreshBalances();
-
-
-
-///////////////////////////////////////////////////////////////////////
-////////////////////                    ///////////////////////////////
-////////////////////       KID 2        ///////////////////////////////
-////////////////////                    ///////////////////////////////
-///////////////////////////////////////////////////////////////////////

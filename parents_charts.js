@@ -1,11 +1,18 @@
+
+
+    
+    
+
+
+
 var ctx = document.getElementById('myChart');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
 		// insert dates/time for info to be displayed
-        labels: ['12/1', '12/8', '12/15', '12/22', '12/29'],
+        labels: ['12/13', '12/14', '12/15', '12/16', '12/17'],
         datasets: [{
-			label: 'Time/Money Consumed over Time',
+			label: 'Screen-time Spent',
 			// insert data values for appropriate dates/times 
             data: [19, 3, 5, 2, 3],
             backgroundColor: [
@@ -43,10 +50,10 @@ var ctx = document.getElementById('myChart2');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['12/1', '12/8', '12/15', '12/22', '12/29'],
+        labels: ['12/12', '12/13', '12/14', '12/15', '12/16', '12/17', '12/18',],
         datasets: [{
-            label: '# of Votes',
-            data: [19, 3, 5, 2, 3],
+            label: 'Allowence Paid',
+            data: [19, 3, 5, 2, 3, 3, lastIndexOf(kidArr[0].ScreenHist)],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

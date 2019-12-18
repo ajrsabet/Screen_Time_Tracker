@@ -1,7 +1,8 @@
+
 /////////////////// Materialize JS /////////////////////////
 $(document).ready(function () {
 	$(".dropdown-trigger").dropdown();
-	player.stopVideo();
+	// player.stopVideo();
 })
 
 /////////////////// Home page /////////////////////////
@@ -20,6 +21,7 @@ var kidArr = [{
 	MonBal: 0.00,
 	MonReqst: 0,
 	MoneyHist: [],
+	ScreenHist: [],
 	ImgURL: "",
 }, {
 	Name: "",
@@ -30,10 +32,12 @@ var kidArr = [{
 	MonBal: 0.00,
 	MonReqst: 0,
 	MoneyHist: [],
+	ScreenHist: [],
 	ImgURL: "",
 }]
 
 var ThemeArr = ["pink", "blue", "orange", "black"]
+console.log(ThemeArr);
 
 if (localStorage.getItem("kidArr") !== null) {
 	kidArr = JSON.parse(localStorage.getItem("kidArr"));
@@ -41,6 +45,7 @@ if (localStorage.getItem("kidArr") !== null) {
 
 ////////////// Refresh local storage/display ////////////
 function kid1Refresh() {
+	updateTheme();
 	// Allowence rate
 	$('.kid1Allowence').html("Allowence Rate: $" + kidArr[0].Allowence * 60 + "/hour");
 
@@ -60,6 +65,23 @@ function kid1Refresh() {
 }
 
 
+// // console.log("kidArr length: " + kidArr[0].ScreenHist.size());
+// var kid1MoneyHist = kidArr[0].ScreenHist;
+// console.log(kid1MoneyHist);
+ 
+// var kid1MoneyHistDate = [];
+// var kid1MoneyHistAmount = [];
+
+
+// for(var i = 0; i < 10; i += 2) {  // take every second element
+//     // ar.push(a[i]);
+//     kid1MoneyHistDate.push(kid1MoneyHist[i]);
+//     kid1MoneyHistAmount.push(kid1MoneyHist[i+1]);
+// }
+
+// console.log("Date: " + kid1MoneyHistDate);
+// console.log("Date: " + kid1MoneyHistAmount);
+
 /////////////////// Stats/parents portal ////////////////
 
 // TODO: PARKING LOT pay kid custom amount WORKING JUST UN_COMMENT AND ADD BUTTON 
@@ -71,9 +93,9 @@ function kid1Refresh() {
 
 // 	} else {
 // 		// Check if date already exists in history
-// 		if (kidArr[0].MoneyHist.includes(moment().format('YYYYMMDD')) === true) {
+// 		if (kidArr[0].MoneyHist.includes(moment().format('MM/DD/YY')) === true) {
 // 			// Get current date index from history
-// 			var indexDate = kidArr[0].MoneyHist.indexOf(moment().format('YYYYMMDD'));
+// 			var indexDate = kidArr[0].MoneyHist.indexOf(moment().format('MM/DD/YY'));
 
 // 			// Add new value to existing value
 // 			kidArr[0].MoneyHist.splice(indexDate + 1, 1, JSON.stringify(parseInt(kidArr[0].MoneyHist[indexDate + 1]) + JSON.parse($(this).prev().val())));
@@ -83,7 +105,7 @@ function kid1Refresh() {
 
 // 		} else {
 // 			// If date is not in history, add new date and value
-// 			kidArr[0].MoneyHist.push(moment().format('YYYYMMDD'));
+// 			kidArr[0].MoneyHist.push(moment().format('MM/DD/YY'));
 // 			kidArr[0].MoneyHist.push($(this).prev().val());
 
 // 			// Reduce available balance
@@ -107,16 +129,16 @@ function kid1Refresh() {
 $(".payKid1AllBtn").on("click", function () {
 
 	// Check if date already exists in history
-	if (kidArr[0].MoneyHist.includes(moment().format('YYYYMMDD')) === true) {
+	if (kidArr[0].MoneyHist.includes(moment().format('MM/DD/YY')) === true) {
 		// Get current date index from history
-		var indexDate = kidArr[0].MoneyHist.indexOf(moment().format('YYYYMMDD'));
+		var indexDate = kidArr[0].MoneyHist.indexOf(moment().format('MM/DD/YY'));
 
 		// Add new value to existing value
 		kidArr[0].MoneyHist.splice(indexDate + 1, 1, JSON.stringify(parseInt(kidArr[0].MoneyHist[indexDate + 1]) + kidArr[0].MonBal));
 
 	} else {
 		// If date is not in history, add new date and value
-		kidArr[0].MoneyHist.push(moment().format('YYYYMMDD'));
+		kidArr[0].MoneyHist.push(moment().format('MM/DD/YY'));
 		kidArr[0].MoneyHist.push(kidArr[0].MonBal);
 	}
 
@@ -203,6 +225,7 @@ $(".imageSearch").on("submit", function (event) {
 
 //  Start/stop time AJS
 // Play/pause button
+var player;
 var kid1play = false;
 $(".kid1PlayPause").on("click", function () {
 
@@ -227,6 +250,7 @@ function kid1startTimer() {
 		} else {
 			// Stop timer if time runs out.
 			clearInterval(myInterval)
+			stopVideo()
 			alert("You are out of screen time. Be productive to earn more time/money")
 		}
 
@@ -366,9 +390,9 @@ function kid2Refresh() {
 
 // 	} else {
 // 		// Check if date already exists in history
-// 		if (kidArr[1].MoneyHist.includes(moment().format('YYYYMMDD')) === true) {
+// 		if (kidArr[1].MoneyHist.includes(moment().format('MM/DD/YY')) === true) {
 // 			// Get current date index from history
-// 			var indexDate = kidArr[1].MoneyHist.indexOf(moment().format('YYYYMMDD'));
+// 			var indexDate = kidArr[1].MoneyHist.indexOf(moment().format('MM/DD/YY'));
 
 // 			// Add new value to existing value
 // 			kidArr[1].MoneyHist.splice(indexDate + 1, 1, JSON.stringify(parseInt(kidArr[1].MoneyHist[indexDate + 1]) + JSON.parse($(this).prev().val())));
@@ -378,7 +402,7 @@ function kid2Refresh() {
 
 // 		} else {
 // 			// If date is not in history, add new date and value
-// 			kidArr[1].MoneyHist.push(moment().format('YYYYMMDD'));
+// 			kidArr[1].MoneyHist.push(moment().format('MM/DD/YY'));
 // 			kidArr[1].MoneyHist.push($(this).prev().val());
 
 // 			// Reduce available balance
@@ -402,16 +426,16 @@ function kid2Refresh() {
 $(".payKid2AllBtn").on("click", function () {
 
 	// Check if date already exists in history
-	if (kidArr[1].MoneyHist.includes(moment().format('YYYYMMDD')) === true) {
+	if (kidArr[1].MoneyHist.includes(moment().format('MM/DD/YY')) === true) {
 		// Get current date index from history
-		var indexDate = kidArr[1].MoneyHist.indexOf(moment().format('YYYYMMDD'));
+		var indexDate = kidArr[1].MoneyHist.indexOf(moment().format('MM/DD/YY'));
 
 		// Add new value to existing value
 		kidArr[1].MoneyHist.splice(indexDate + 1, 1, JSON.stringify(parseInt(kidArr[1].MoneyHist[indexDate + 1]) + kidArr[1].MonBal));
 
 	} else {
 		// If date is not in history, add new date and value
-		kidArr[1].MoneyHist.push(moment().format('YYYYMMDD'));
+		kidArr[1].MoneyHist.push(moment().format('MM/DD/YY'));
 		kidArr[1].MoneyHist.push(kidArr[1].MonBal);
 	}
 

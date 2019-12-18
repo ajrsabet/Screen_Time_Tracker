@@ -9,7 +9,7 @@ width: 100%;
     color: black;
 }
 #footer {
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -214,9 +214,9 @@ width: 100%;
     margin: 0 auto;
     text-align: center;
     font-size: x-large;
-    padding-top: 5vh;
-    height: 5vh;
-    margin-top: 2vh;
+    padding-top: 5pt;
+    height: 30pt;
+    margin-top: 2pt;
 }
 #imgController{
     height: 30%;
@@ -250,7 +250,7 @@ width: 100%;
 h5 {
 font-family: Arial, Helvetica, sans-serif;
 color: rgb(155, 155, 155);
-font-size: 1vw;
+font-size: 14px;
 }
 .SpanOval3 {
     border-radius: 25px;
@@ -262,6 +262,7 @@ font-size: 1vw;
 }
 .body{
     background-image: url("images/website_main_background.png");
+
 }
 .body2{
     background-image: url("http://placekitten.com/500/500");

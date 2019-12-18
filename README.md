@@ -37,15 +37,17 @@ Adam Sabet - Back-end
 Aidan Willett - Front-end
 ​
 ## ​Third-party assets:
-https://materializecss.com/ for styling
 
-https://openweathermap.org/api for the weather server-side API
+- Data Charts: Chart.js - https://www.chartjs.org/
+- Time: Moment.js - https://momentjs.com/
+- CSS: Materialize - https://materializecss.com/getting-started.html
 
-https://momentjs.com/ for time 3rd party CDN
+## Server-Side: 
 
-https://www.w3schools.com/ for help with styling
-
-https://stackoverflow.com/ for help with syntax
+- Photos: Unsplash - https://unsplash.com/ 
+- Video: YouTube API - https://developers.google.com/youtube/v3
+- https://www.w3schools.com/ for help with styling
+- https://stackoverflow.com/ for help with syntax
 
 ## License
 N/A

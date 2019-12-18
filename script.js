@@ -187,9 +187,15 @@ $(".imageSearch").on("submit", function (event) {
 		
 		$(document).on("click", ".generatedImg", function(){
 			// event.preventDefault();
+			console.log("blargh");
+			
 			console.log(this.src);
 			
-			kidArr[0].ImgURL=$(this.src)
+			kidArr[0].ImgURL=this.src
+			// $(".body2").css("background-image", "url(" + this.src + ")");
+			// $(".box").css("background-image", "url(" + imageUrl + ")");
+			console.log($(".body2").css("background-image"));
+			
 			kid1Refresh();
 			
 		});

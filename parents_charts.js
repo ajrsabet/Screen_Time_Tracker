@@ -5,7 +5,7 @@ var myChart = new Chart(ctx, {
 		// insert dates/time for info to be displayed
         labels: ['12/1', '12/8', '12/15', '12/22', '12/29'],
         datasets: [{
-			label: 'Time/Money Consumed over Time',
+			label: 'Allowence Paid',
 			// insert data values for appropriate dates/times 
             data: [19, 3, 5, 2, 3],
             backgroundColor: [
@@ -45,7 +45,7 @@ var myChart = new Chart(ctx, {
     data: {
         labels: ['12/1', '12/8', '12/15', '12/22', '12/29'],
         datasets: [{
-            label: '# of Votes',
+            label: 'Screen Time',
             data: [19, 3, 5, 2, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',

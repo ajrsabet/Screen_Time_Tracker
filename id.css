@@ -368,6 +368,7 @@ p {
         margin-right: 2vw;
         margin-left: 4vw;
     }
+   
     .spanCircleKis2 {
         margin-right: 20vw;
         float: right;
@@ -425,20 +426,24 @@ p {
         line-height: 25vw;
     }
     #imgPig{
-        height: 20vw;
-        width: 20vw;
+        height: 25vw;
+        width: 25vw;
     }
     .spanOvalBarTitle{
         width: 70%;
     }
 }
-@media only screen and (max-width: 850px){
-    #imgPig{
-        height: 30vw;
-        width: 30vw;
-    }
+@media only screen and (max-width: 550px){
+   
     .spanOvalBarTitle{
-        width: 30vw;
+        width: 25vw;
     } 
 }
+@media only screen and (max-width: 400px){
+   
+    .spanOvalBarTitle{
+        width: 27vw;
+    } 
+}
+
 

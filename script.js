@@ -6,7 +6,7 @@ $(document).ready(function () {
 
 //////////////////// local storage variables//////////////////
 
-let kidID = 0;
+let kidID;
 
 let kidArr = [{
 	ID: 0,
@@ -43,6 +43,10 @@ if (localStorage.getItem("kidArr") !== null) {
 	kidArr = JSON.parse(localStorage.getItem("kidArr"));
 }
 
+if (localStorage.getItem("kidArr") !== null) {
+	kidArr = JSON.parse(localStorage.getItem("kidArr"));
+}
+
 const ThemeArr = ["pink", "blue", "orange", "black"]
 
 
@@ -51,6 +55,48 @@ const ThemeArr = ["pink", "blue", "orange", "black"]
 // 		$(".button").addClass('kidID0')
 // 	} else if (kidID = 1) {
 // 		$(".button").addClass('kidID1')
+
+	var searchInput = $(".searchInput").val();
+	// console.log(searchInput);
+	
+	var queryURL = "https://api.unsplash.com/search/photos?query=" + searchInput + "&client_id=e95ecaea5f2f22854ddc21c0f047145e88a13a1759d8a88737ec5affafc9ead4";
+	$("kid-background-holder").empty();
+	$.ajax({
+		allRoutes: true,
+		url: queryURL,
+		method: "GET"
+	}).then(function (response) {
+		for (let i = 0; i <response.results.length; i++) {
+			var imageData = response.results[i].urls.thumb;
+			
+			// console.log(imageData);
+			var imageHolder = $(".kid-background-holder");
+			var searchImage = $("<img>");
+			
+			searchImage.attr("src", (imageData));
+			searchImage.attr("style", "margin=10px");
+			searchImage.addClass("kid-background-image");
+			searchImage.addClass("generatedImg");
+			imageHolder.append(searchImage);
+
+		}
+		
+		$(document).on("click", ".generatedImg", function(){
+			// event.preventDefault();
+			console.log("blargh");
+			
+			console.log(this.src);
+			
+			kidArr[0].ImgURL=this.src
+			// $(".body2").css("background-image", "url(" + this.src + ")");
+			// $(".box").css("background-image", "url(" + imageUrl + ")");
+			console.log($(".body2").css("background-image"));
+			
+			kid1Refresh();
+			
+		});
+	});
+	// populated = true;
 // }
 
 $(".kidID0").hover(function () {

@@ -358,6 +358,11 @@ p {
     display: block;
     margin: 0 auto;
 }
+@media only screen and (max-width: 1480px) {
+    #imgController{
+        margin-right: 4vw;
+    }
+}
 
 @media only screen and (max-width: 1125px) {
 

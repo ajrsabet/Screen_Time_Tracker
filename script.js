@@ -1,3 +1,4 @@
+// debugger;
 /////////////////// Materialize JS /////////////////////////
 $(document).ready(function () {
 	$(".dropdown-trigger").dropdown();
@@ -6,144 +7,153 @@ $(document).ready(function () {
 
 //////////////////// local storage variables//////////////////
 
-let kidID;
+let kidID = 0;
 
 let kidArr = [{
-	ID: 0,
-	Name: "",
-	Age: "",
-	Theme: "",
-	ScreenBal: 0,
-	Allowence: .10,
-	MonBal: 0.00,
-	MonReqst: 0,
-	PaidDate: [],
-	MoneyPaid: [],
-	ScreenDate: [],
-	ScreenHist: [],
-	ImgURL: "",
+	name: "Chris",
+	age: "",
+	theme: "blue",
+	screenBal: 0,
+	allowance: .10,
+	monBal: 0.00,
+	monReqst: 0,
+	paidDate: [],
+	moneyPaid: [],
+	screenDate: [],
+	screenHist: [],
+	imgUrl: "",
 }, {
-	ID: 1,
-	Name: "",
-	Age: "",
-	Theme: "",
-	ScreenBal: 0,
-	Allowence: .10,
-	MonBal: 0.00,
-	MonReqst: 0,
-	PaidDate: [],
-	MoneyPaid: [],
-	ScreenDate: [],
-	ScreenHist: [],
-	ImgURL: "",
+	name: "Sean",
+	age: "",
+	theme: "blue",
+	screenBal: 0,
+	allowance: .10,
+	monBal: 0.00,
+	monReqst: 0,
+	paidDate: [],
+	moneyPaid: [],
+	screenDate: [],
+	screenHist: [],
+	imgUrl: "",
 }]
 
 // Retrieve local storage
-if (localStorage.getItem("kidArr") !== null) {
-	kidArr = JSON.parse(localStorage.getItem("kidArr"));
+if (localStorage.getItem("kidID") !== null) {
+	kidArr = JSON.parse(localStorage.getItem("kidID"));
 }
 
 if (localStorage.getItem("kidArr") !== null) {
 	kidArr = JSON.parse(localStorage.getItem("kidArr"));
 }
+console.log("KidID: " + kidID);
 
-const ThemeArr = ["pink", "blue", "orange", "black"]
+// Load links to kid pages in Navbar drop down
+for (let i = 0; i < kidArr.length; i++) {
+	const kidLi = $("<li>");
+	const kidLink = $("<a>");
+	$("#dropdown1").append(kidLi);
+	kidLi.append(kidLink);
+	kidLink.addClass("black-text kidLink kidID" + i);
+	kidLink.html(kidArr[i].name);
+}
 
-
-// function appendKidID() {
-// 	if (kidID = 0) {
-// 		$(".button").addClass('kidID0')
-// 	} else if (kidID = 1) {
-// 		$(".button").addClass('kidID1')
-
-	var searchInput = $(".searchInput").val();
-	// console.log(searchInput);
-	
-	var queryURL = "https://api.unsplash.com/search/photos?query=" + searchInput + "&client_id=e95ecaea5f2f22854ddc21c0f047145e88a13a1759d8a88737ec5affafc9ead4";
-	$("kid-background-holder").empty();
-	$.ajax({
-		allRoutes: true,
-		url: queryURL,
-		method: "GET"
-	}).then(function (response) {
-		for (let i = 0; i <response.results.length; i++) {
-			var imageData = response.results[i].urls.thumb;
-			
-			// console.log(imageData);
-			var imageHolder = $(".kid-background-holder");
-			var searchImage = $("<img>");
-			
-			searchImage.attr("src", (imageData));
-			searchImage.attr("style", "margin=10px");
-			searchImage.addClass("kid-background-image");
-			searchImage.addClass("generatedImg");
-			imageHolder.append(searchImage);
-
-		}
+// Set kidID class on objects for function target
+$(document).ready(function () {
+	let idClassArr = [];
+	for (let i = 0; i < kidArr.length; i++) {
+		idClassArr.push(".kidID"+i)
 		
-		$(document).on("click", ".generatedImg", function(){
-			// event.preventDefault();
-			console.log("blargh");
-			
-			console.log(this.src);
-			
-			kidArr[0].ImgURL=this.src
-			// $(".body2").css("background-image", "url(" + this.src + ")");
-			// $(".box").css("background-image", "url(" + imageUrl + ")");
-			console.log($(".body2").css("background-image"));
-			
-			kid1Refresh();
-			
-		});
+	}
+	idClassString = idClassArr.join();
+	console.log(idClassString);
+	
+	$(idClassString).hover(function () {
+		for (let i = 0; i < kidArr.length; i++) {
+				if ($(this).hasClass("kidID" + i)) {
+				kidID = i;
+				localStorage.setItem("kidID", kidID);
+				console.log(kidID);
+			}
+		}
 	});
-	// populated = true;
-// }
+	// $(".kidID1").hover(function () {
+	// 	if (kidID !== 1) {
+	// 		kidID = 1
+	// 		localStorage.setItem("kidID", kidID);
+	// 		console.log(kidID);
+	// 	}
+	// });
 
-$(".kidID0").hover(function () {
-	if (kidID !== 0) {
-		kidID = 0
-		console.log('kidID: ' + kidID);
-	}
-});
-$(".kidID1").hover(function () {
-	if (kidID !== 1) {
-		kidID = 1
-		console.log('kidID: ' + kidID);
-	}
-});
+	$('.kidLink').click(function () {
+		for (let i = 0; i < kidArr.length; i++) {
+			if ($(this).hasClass("kidID" + i)) {
+				kidID = i;
+			}
+		}
+		console.log("kidID: " + kidID);
+		
+		localStorage.setItem("kidID", kidID);
+		location.href = 'kid1.html';
+	})
+})
+
 
 
 ////////////// Refresh local storage/display ////////////
 
-function kidRefresh() {
-	updateTheme();
-	// Allowence rate
 
-	$('.kidAllowence.kidID' + kidID).html("Allowence Rate: $" + kidArr[kidID].Allowence * 60 + "/hour");
+function kidRefresh() {
+	// Kid Names	
+	$('.spanCircleNameTag.kidID' + kidID).html(kidArr[kidID].name);
+
+	// Allowance rate
+	$('.kidAllowance.kidID' + kidID).html("Allowance Rate: $" + kidArr[kidID].allowance * 60 + "/hour");
 
 	// Money balance
-	kidArr[kidID].MonBal = ((kidArr[kidID].ScreenBal / 60) * kidArr[kidID].Allowence / 1000).toFixed(2);
-	$('.kidMonBal.kidID' + kidID).html("Available Money: $" + (kidArr[kidID].MonBal));
+	kidArr[kidID].monBal = ((kidArr[kidID].screenBal / 60) * kidArr[kidID].allowance / 1000).toFixed(2);
+	$('.kidMonBal.kidID' + kidID).html("Available Money: $" + (kidArr[kidID].monBal));
 
 	// Screen balance
-	$('.kidScreenBal.kidID' + kidID).html("Screen Balance: " + (moment(kidArr[kidID].ScreenBal + (8 * 60 * 60 * 1000)).format('HH:mm:ss')));
+	$('.kidScreenBal.kidID' + kidID).html("Screen Balance: " + (moment(kidArr[kidID].screenBal + (8 * 60 * 60 * 1000)).format('HH:mm:ss')));
 
-	if ((kidArr[kidID].MonReqst) > 0) {
-		$('.kidMonReqst.kidID' + kidID).html("Allowence Requested: $" + (kidArr[kidID].MonReqst).toFixed(2));
+	if ((kidArr[kidID].monReqst) > 0) {
+		$('.kidMonReqst.kidID' + kidID).html("Allowance Requested: $" + (kidArr[kidID].monReqst).toFixed(2));
 	}
 
-	$('.kidName.kidID' + kidID).html(kidArr[kidID].Name);
+	// Display kid name
+	$('.kidName.kidID' + kidID).html(kidArr[kidID].name);
 
 	// Local storage Money request total////////////
 	localStorage.setItem("kidArr", JSON.stringify(kidArr));
 }
 
-// Display kid
+function updateTheme() {
+	// const themeClassArr = [$(".green"), $(".blue"), $(".deep-purple"), $(".light-green"), $(".yellow")]
+	// for (let i = 0; i < themeClassArr.length; i++) {
 
-for (let i = 0; i < kidArr.length; i++) {
-	kidID = i;
-	kidRefresh();
+	if (kidArr[kidID].theme === "purple") {
+		$('.kidTheme').removeClass('green light-green lighten-2 orange yellow blue lighten-1');
+		$('.kidTheme').addClass('deep-purple lighten-3');
+
+	} else if (kidArr[kidID].theme === "green") {
+		$('.kidTheme').removeClass('deep-purple lighten-3 orange yellow lighten-1');
+		$('.kidTheme').addClass('light-green lighten-2');
+
+	} else if (kidArr[kidID].theme === "blue") {
+		$('.kidTheme').removeClass('green deep-purple lighten-3 light-green lighten-2 yellow lighten-1');
+		$('.kidTheme').addClass('blue lighten-2');
+
+	} else if (kidArr[kidID].theme === "yellow") {
+		$('.kidTheme').removeClass('green deep-purple lighten-3 light-green lighten-2 orange');
+		$('.kidTheme').addClass('yellow lighten-1');
+	} else {
+		$('.kidTheme').addClass('green');
+	}
+	// }
 }
+
+
+
 
 
 /////////////////// Stats/parents portal ////////////////
@@ -153,64 +163,64 @@ for (let i = 0; i < kidArr.length; i++) {
 // $(".payKid1Btn").on("click", function () {
 
 // 	// Check balance available
-// 	if (JSON.parse($(this).prev().val()) >= kidArr[kidID].MonBal) {
-// 		alert("Balance available: $" + kidArr[kidID].MonBal + ". Please choose another amount")
+// 	if (JSON.parse($(this).prev().val()) >= kidArr[kidID].monBal) {
+// 		alert("Balance available: $" + kidArr[kidID].monBal + ". Please choose another amount")
 
 // 	} else {
 // 		// Check if date already exists in history
-// 		if (kidArr[kidID].MoneyPaid.includes(moment().format('MM/DD/YY')) === true) {
+// 		if (kidArr[kidID].moneyPaid.includes(moment().format('MM/DD/YY')) === true) {
 // 			// Get current date index from history
-// 			var indexDate = kidArr[kidID].MoneyPaid.indexOf(moment().format('MM/DD/YY'));
+// 			var indexDate = kidArr[kidID].moneyPaid.indexOf(moment().format('MM/DD/YY'));
 
 // 			// Add new value to existing value
-// 			kidArr[kidID].MoneyPaid.splice(indexDate + 1, 1, JSON.stringify(parseInt(kidArr[kidID].MoneyPaid[indexDate + 1]) + JSON.parse($(this).prev().val())));
+// 			kidArr[kidID].moneyPaid.splice(indexDate + 1, 1, JSON.stringify(parseInt(kidArr[kidID].moneyPaid[indexDate + 1]) + JSON.parse($(this).prev().val())));
 
 // 			// Reduce available balance
-// 			kidArr[kidID].ScreenBal = (kidArr[kidID].ScreenBal - (JSON.parse($(this).prev().val())) / kidArr[kidID].Allowence)
+// 			kidArr[kidID].screenBal = (kidArr[kidID].screenBal - (JSON.parse($(this).prev().val())) / kidArr[kidID].allowance)
 
 // 		} else {
 // 			// If date is not in history, add new date and value
-// 			kidArr[kidID].MoneyPaid.push(moment().format('MM/DD/YY'));
-// 			kidArr[kidID].MoneyPaid.push($(this).prev().val());
+// 			kidArr[kidID].moneyPaid.push(moment().format('MM/DD/YY'));
+// 			kidArr[kidID].moneyPaid.push($(this).prev().val());
 
 // 			// Reduce available balance
-// 			kidArr[kidID].ScreenBal = (kidArr[kidID].ScreenBal - (JSON.parse($(this).prev().val())) / kidArr[kidID].Allowence)
+// 			kidArr[kidID].screenBal = (kidArr[kidID].screenBal - (JSON.parse($(this).prev().val())) / kidArr[kidID].allowance)
 
 // 		}
 
-// 		// Update kidArr[kidID].ScreenBal
-// 		if (JSON.parse($(this).prev().val()) >= kidArr[kidID].MonReqst) {
+// 		// Update kidArr[kidID].screenBal
+// 		if (JSON.parse($(this).prev().val()) >= kidArr[kidID].monReqst) {
 
-// 			kidArr[kidID].MonReqst = 0;
+// 			kidArr[kidID].monReqst = 0;
 // 		} else {
-// 			kidArr[kidID].MonReqst = kidArr[kidID].MonReqst - JSON.parse($(this).prev().val());
-// 			kidArr[kidID].ScreenBal = kidArr[kidID].ScreenBal - (JSON.parse($(this).prev().val()) / kidArr[kidID].Allowence);
+// 			kidArr[kidID].monReqst = kidArr[kidID].monReqst - JSON.parse($(this).prev().val());
+// 			kidArr[kidID].screenBal = kidArr[kidID].screenBal - (JSON.parse($(this).prev().val()) / kidArr[kidID].allowance);
 // 		}
 // 		kidRefresh();
 // 	}
 // });
 
 // pay kid all requested 
-$(".payKidAllBtn.kidID" + kidID).on("click", function () {
+$(".payKidAllBtn").on("click", function () {
 
 	// Check if date already exists in history
-	if (kidArr[kidID].PaidDate.includes(moment().format('MM/DD/YY')) === true) {
+	if (kidArr[kidID].paidDate.includes(moment().format('MM/DD/YY')) === true) {
 		// Get current date index from history
-		var indexDate = kidArr[kidID].PaidDate.indexOf(moment().format('MM/DD/YY'));
+		var indexDate = kidArr[kidID].paidDate.indexOf(moment().format('MM/DD/YY'));
 
 		// Add new value to existing value
-		kidArr[kidID].MoneyPaid.splice(indexDate, 1, (JSON.parse(kidArr[kidID].MoneyPaid[indexDate]) + JSON.parse(kidArr[kidID].MonBal)));
+		kidArr[kidID].moneyPaid.splice(indexDate, 1, (JSON.parse(kidArr[kidID].moneyPaid[indexDate]) + JSON.parse(kidArr[kidID].monBal)));
 
 	} else {
 		// If date is not in history, add new date and value
-		kidArr[kidID].PaidDate.push(moment().format('MM/DD/YY'));
-		kidArr[kidID].MoneyPaid.push(kidArr[kidID].MonBal);
+		kidArr[kidID].paidDate.push(moment().format('MM/DD/YY'));
+		kidArr[kidID].moneyPaid.push(kidArr[kidID].monBal);
 
 	}
 
-	// Update kidArr[kidID].ScreenBal
-	kidArr[kidID].MonReqst = 0;
-	kidArr[kidID].ScreenBal = 0;
+	// Update kidArr[kidID].screenBal
+	kidArr[kidID].monReqst = 0;
+	kidArr[kidID].screenBal = 0;
 	kidRefresh();
 });
 
@@ -218,7 +228,7 @@ $(".payKidAllBtn.kidID" + kidID).on("click", function () {
 $(".kidAddTimeBtn").click(function () {
 	console.log("add: " + kidID);
 
-	kidArr[kidID].ScreenBal = kidArr[kidID].ScreenBal + (15 * 60 * 1000);
+	kidArr[kidID].screenBal = kidArr[kidID].screenBal + (15 * 60 * 1000);
 
 	kidRefresh();
 })
@@ -227,14 +237,14 @@ $(".kidAddTimeBtn").click(function () {
 $(".kidDeductTimeBtn").click(function () {
 	console.log("deduct: " + kidID);
 
-	if (kidArr[kidID].ScreenBal >= 15) {
+	if (kidArr[kidID].screenBal >= 15) {
 
-		kidArr[kidID].ScreenBal = kidArr[kidID].ScreenBal - (15 * 60 * 1000);
+		kidArr[kidID].screenBal = kidArr[kidID].screenBal - (15 * 60 * 1000);
 
 		kidRefresh();
 
 	} else {
-		kidArr[kidID].ScreenBal = 0;
+		kidArr[kidID].screenBal = 0;
 		alert("There is less than 15 minutes remaining. The balance is set to 0")
 	}
 })
@@ -280,7 +290,7 @@ $(".imageSearch").on("submit", function (event) {
 			// event.preventDefault();
 			console.log(this.src);
 
-			kidArr[kidID].ImgURL = $(this.src)
+			kidArr[kidID].imgUrl = $(this.src)
 			kidRefresh();
 
 		});
@@ -288,150 +298,5 @@ $(".imageSearch").on("submit", function (event) {
 	// populated = true;
 	// }
 });
-
-
-///// TODO: PARKING LOT modal popout 
-
-//  Start/stop time AJS
-// Play/pause button
-var player;
-var kidplay = false;
-$(".kidPlayPause").on("click", function () {
-
-	if (kidplay === true) {
-		kidplay = false;
-		kidstopTimer();
-		player.stopVideo();
-	} else {
-		kidplay = true;
-		kidstartTimer();
-		player.playVideo();
-	}
-});
-
-// TODO: Timer start
-function kidstartTimer() {
-	myInterval = setInterval(function () {
-		if (kidArr[kidID].ScreenBal >= 0) {
-			kidArr[kidID].ScreenBal = kidArr[kidID].ScreenBal - 1000;
-			// Check if date already exists in history
-			if (kidArr[kidID].ScreenDate.includes(moment().format('MM/DD/YY')) === true) {
-				// Get current date index from history
-				var indexDate = kidArr[kidID].ScreenDate.indexOf(moment().format('MM/DD/YY'));
-
-				// Add new value to existing value
-				kidArr[kidID].ScreenHist.splice(indexDate, 1, (JSON.parse(kidArr[kidID].ScreenHist[indexDate]) + 1000));
-
-			} else {
-				// If date is not in history, add new date and value
-				kidArr[kidID].ScreenDate.push(moment().format('MM/DD/YY'));
-				kidArr[kidID].ScreenHist.push(kidArr[kidID].MonBal);
-				if (!kidArr[kidID].ScreenHist[indexDate]) {
-					// kidArr[kidID].ScreenHist.push(1);
-				}
-			}
-			kidRefresh();
-		} else {
-			// Stop timer if time runs out.
-			clearInterval(myInterval)
-			stopVideo()
-			kidArr[kidID].ScreenBal = 0;
-			alert("You are out of screen time. Be productive to earn more time/money")
-		}
-
-	}, 1000);
-}
-
-
-
-
-//////////////
-// Timer stop
-function kidstopTimer() {
-	clearInterval(myInterval);
-}
-
-////// TODO: MDP dynamic filtered video search 
-
-
-// Money request 
-$(".kidMonReqstBtn").click(function () {
-
-	if ($(this).prev().val() > kidArr[kidID].MonBal) {
-		alert("You only have $" + kidArr[kidID].MonBal + " You can do more chores to save up.")
-	} else {
-		kidArr[kidID].MonReqst = kidArr[kidID].MonReqst + JSON.parse($(this).prev().val())
-
-		kidRefresh();
-	}
-})
-
-$(".kidMonReqstAllBtn").click(function () {
-	alert("You have just requested to be paid!");
-	kidArr[kidID].MonReqst = kidArr[kidID].MonBal
-
-	kidRefresh();
-
-})
-
-/////////////////// Modal edit form /////////////////
-// Change name, age 
-$(".kidSaveBtn").click(function () {
-	if ($(".kidName.kidID" + kidID).val !== null) {
-		kidArr[kidID].Name = $(".kidName").val();
-	}
-	if ($(".kidAge").val !== null) {
-		kidArr[kidID].Age = $(".kidAge").val();
-	}
-	kidRefresh();
-})
-
-$(".spanCircleKidPurple").click(function () {
-	kidArr[kidID].Theme = "purple"
-	kidRefresh();
-	updateTheme();
-})
-
-$(".spanCircleKidGreen").click(function () {
-	kidArr[kidID].Theme = "green"
-	kidRefresh();
-	updateTheme();
-})
-
-$(".spanCircleKidBlue").click(function () {
-	kidArr[kidID].Theme = "blue"
-	kidRefresh();
-	updateTheme();
-})
-
-$(".spanCircleKidYellow").click(function () {
-	kidArr[kidID].Theme = "yellow"
-	updateTheme();
-	kidRefresh();
-})
-
-function updateTheme() {
-	var themeClassArr = [$(".green"), $(".blue"), $(".deep-purple"), $(".light-green"), $(".yellow")]
-	for (let i = 0; i < themeClassArr.length; i++) {
-
-		if (kidArr[kidID].Theme === "purple") {
-			themeClassArr[i].removeClass('green light-green lighten-2 orange yellow blue lighten-1');
-			themeClassArr[i].addClass('deep-purple lighten-3');
-
-		} else if (kidArr[kidID].Theme === "green") {
-			themeClassArr[i].removeClass('deep-purple lighten-3 orange yellow lighten-1');
-			themeClassArr[i].addClass('light-green lighten-2');
-
-		} else if (kidArr[kidID].Theme === "blue") {
-			themeClassArr[i].removeClass('green deep-purple lighten-3 light-green lighten-2 yellow lighten-1');
-			themeClassArr[i].addClass('blue lighten-2');
-
-		} else if (kidArr[kidID].Theme === "yellow") {
-			themeClassArr[i].removeClass('green deep-purple lighten-3 light-green lighten-2 orange');
-			themeClassArr[i].addClass('yellow lighten-1');
-		}
-	}
-}
-
 
 kidRefresh();

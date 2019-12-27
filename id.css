@@ -63,7 +63,19 @@ width: 100%;
     margin-left: 5%;
     
 }
-.spanCircleKid1 {
+.spanCircleNameTag {
+    display: block;
+    height: 200px;
+    width: 200px;
+    line-height: 200px;
+    color: black;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2em;
+    margin: 0 auto;
+}
+/* .spanCircleKid {
     display: block;
     height: 30vh;
     width: 30vh;
@@ -74,21 +86,9 @@ width: 100%;
     text-align: center;
     font-size: 2em;
     margin: 0 auto;
-}
-.spanCircleKid2 {
-    display: block;
-    height: 30vh;
-    width: 30vh;
-    line-height: 30vh;
-    color: black;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 2em;
-    margin: 0 auto;
-}
+} */
 
-.spanCircle2Kid1 {
+/* .spanCircle2Kid1 {
     height: 30vh;
     width: 30vh;
     line-height: 30vh;
@@ -101,8 +101,8 @@ width: 100%;
     position: relative;
     margin-left: 20%;
     
-}
-.spanCircle2Kid2 {
+} */
+/* .spanCircle2Kid2 {
     height: 30vh;
     width: 30vh;
     line-height: 30vh;
@@ -115,7 +115,7 @@ width: 100%;
     position: relative;
     margin-left: 5%;
     
-}
+} */
 
 .spanCircleKidPurple {
 

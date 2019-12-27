@@ -1,7 +1,10 @@
 
  
 
-
+for (let i = 0; i < kidArr.length; i++) {
+	kidID = i;
+	kidRefresh();
+}
 
 var ctx = document.getElementById('myChart');
 var myChart = new Chart(ctx, {

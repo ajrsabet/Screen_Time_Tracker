@@ -20,8 +20,7 @@
     <nav class="green accent-2">
       <ul id="dropdown1" class="dropdown-content black-text green accent-3">Menu
         <li><a href="index.html" class="black-text">Home</a></li>
-        <!-- <li><a class="black-text kidLink kid0">Chris</a></li>
-        <li><a class="black-text kidLink kid1">Sean</a></li> -->
+        <!-- kids page links generated to here from script.js -->
       </ul>
       <nav>
         <div class="nav-wrapper green accent-2">
@@ -36,18 +35,20 @@
     </nav>
 
     <div class="container">
+      <div class="genKids row">
+          <!------------------ Kids DOM here ----------------------->
+        </div>
 
-
-      <div class="row statsTopSpacing">
+        <!-- <div class="row statsTopSpacing">
         <div class="col s1"></div>
         <div class="col s5 hvr-bob">
-          <a href="kid1.html">
+          <a href="kid.html">
             <span class="light-blue accent-2 spanCircleNameTag kidID0"></span>
           </a>
         </div>
 
         <div class="col s5 hvr-bob">
-          <a href="kid2.html">
+          <a href="kid.html">
             <span class="deep-purple lighten-2 spanCircleNameTag kidID1"></span>
           </a>
         </div>
@@ -97,89 +98,92 @@
         </div>
 
         <div class="col s1">
+        </div> 
+      </div> -->
+      
+        <!-------------- link circle buttons------------ -->
+        <!-- <div class="row">
+          <div class="col s1">
+          </div>
+
+          <div class="col s5">
+            <div class="row">
+              <span class="green accent-2 spanOvalBar kidScreenBal kidID0 black-text">Screen Balance: 00:00:00</span>
+            </div>
+            <br>
+            <div class="row">
+              <span class="green accent-2 spanOvalBar kidMonBal kidID0 black-text">Available Money: $0.00</span>
+            </div>
+            <div class="row">
+              <span class="green accent-2 spanOvalBar payKidAllBtn kidID0 kidMonReqst black-text">Pay Allowence</span>
+            </div>
+          </div>
+
+          <div class="col s5">
+            <div class="row">
+
+              <span class="green accent-2 spanOvalBar kidScreenBal kidID1 black-text">Screen Balance: 00:00:00</span>
+            </div>
+            <br>
+            <div class="row">
+              <span class="green accent-2 spanOvalBar kidMonBal kidID1 black-text">Available Money: $0.00</span>
+            </div>
+            <div class="row">
+              <span class="green accent-2 spanOvalBar payKidAllBtn kidID1 kid2MonReqst black-text">Pay Allowence</span>
+            </div>
+
+          </div>
+
+          <div class="col s1">
+          </div>
+        </div> -->
+
+        <!-------------- Chart -------------->
+        <div class="row statsMiddleSpacing">
+          <div class="col s2"></div>
+
+          <div class="col s8">
+            <p> Allowence Paid </p>
+            <!-------------- first chart goes here -->
+            <canvas id="myChart" width="200" style="background:whitesmoke;"></canvas>
+            <!------------------- ends here -->
+          </div>
+
+          <div class="col s2"></div>
+        </div>
+
+        <div class="row statsMiddleSpacing">
+          <div class="col s2"></div>
+
+          <div class="col s8">
+            <p>Screen Time Spent</p>
+            <!-------------- first chart goes here -->
+            <canvas id="myChart2" width="200" style="background:whitesmoke;"></canvas>
+
+            <!------------------- ends here -->
+          </div>
+
+          <div class="col s2"></div>
         </div>
       </div>
-      <!-------------- link circle buttons------------ -->
-      <div class="row">
-        <div class="col s1">
-        </div>
 
-        <div class="col s5">
-          <div class="row">
-            <span class="green accent-2 spanOvalBar kidScreenBal kidID0 black-text">Screen Balance: 00:00:00</span>
-          </div>
-          <br>
-          <div class="row">
-            <span class="green accent-2 spanOvalBar kidMonBal kidID0 black-text">Available Money: $0.00</span>
-          </div>
-          <div class="row">
-            <span class="green accent-2 spanOvalBar payKidAllBtn kidID0 kidMonReqst black-text">Pay Allowence</span>
-          </div>
-        </div>
+      <div class="row statsBottomSpacing"></div>
+      <br />
 
-        <div class="col s5">
-          <div class="row">
-
-            <span class="green accent-2 spanOvalBar kidScreenBal kidID1 black-text">Screen Balance: 00:00:00</span>
-          </div>
-          <br>
-          <div class="row">
-            <span class="green accent-2 spanOvalBar kidMonBal kidID1 black-text">Available Money: $0.00</span>
-          </div>
-          <div class="row">
-            <span class="green accent-2 spanOvalBar payKidAllBtn kidID1 kid2MonReqst black-text">Pay Allowence</span>
-          </div>
-
-        </div>
-
-        <div class="col s1">
-        </div>
+      <div id="footer">
+        <h7>© 2019 Copyright</h7>
       </div>
 
-      <!-------------- Chart -------------->
-      <div class="row statsMiddleSpacing">
-        <div class="col s2"></div>
 
-        <div class="col s8">
-          <!-------------- first chart goes here -->
-          <canvas id="myChart" width="200" style="background:whitesmoke;"></canvas>
-          <!------------------- ends here -->
-        </div>
-
-        <div class="col s2"></div>
-      </div>
-
-      <div class="row statsMiddleSpacing">
-        <div class="col s2"></div>
-
-        <div class="col s8">
-          <!-------------- first chart goes here -->
-          <canvas id="myChart2" width="200" style="background:whitesmoke;"></canvas>
-
-          <!------------------- ends here -->
-        </div>
-
-        <div class="col s2"></div>
-      </div>
     </div>
-
-    <div class="row statsBottomSpacing"></div>
-    <br />
-
-    <div id="footer">
-      <h7>© 2019 Copyright</h7>
-    </div>
-
-
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
-  <script src="https://api.unsplash.com/"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="materialize/js/materialize.js"></script>
-  <script src="materialize/js/materialize.min.js"></script>
-  <script src="script.js"></script>
-  <script src="parents_charts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+    <script src="https://api.unsplash.com/"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="materialize/js/materialize.js"></script>
+    <script src="materialize/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+    <script src="parents.js"></script>
 </body>
 
 </html>

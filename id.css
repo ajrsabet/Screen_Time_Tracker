@@ -48,7 +48,8 @@ width: 100%;
     margin-top: 20vh;
   
 }
-.spanCircleParrent {
+
+/* .spanCircleParrent {
     height: 30vh;
     width: 30vh;
     line-height: 30vh;
@@ -62,7 +63,7 @@ width: 100%;
     position: relative;
     margin-left: 5%;
     
-}
+} */
 .spanCircleNameTag {
     display: block;
     height: 200px;
@@ -73,7 +74,7 @@ width: 100%;
     border-radius: 50%;
     text-align: center;
     font-size: 2em;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 /* .spanCircleKid {
     display: block;
@@ -116,6 +117,7 @@ width: 100%;
     margin-left: 5%;
     
 } */
+
 
 .spanCircleKidPurple {
 
@@ -202,7 +204,7 @@ width: 100%;
     padding: 15px;
     width: 90%;
     justify-content: center;
-    margin: 0 auto;
+    margin: 40px auto;
     text-align: center;
     color: black;
 }
@@ -309,28 +311,31 @@ margin: 0;
     margin-left: 2vw;
 }
 .figureSize{
-    width: 60%;
+    height: 100px;
     margin: 0 auto;
     display: block;
+    margin-top: 25px;
 }
 .figureSize1{
-    width: 22%;
+    height: 75px;
     margin: 0 auto;
     display: block;
-    margin-top: 4vh;
+    margin-top: 50px;
 }
-.figureSize2{
-    width: 35%;
-    margin: 0 auto;
-    display: block;
-    margin-top: 4vh;
 
+.hvr-bob {
+    margin-left: 20px;
 }
+
+
+
 .noPadding{
     padding: 0;
 }
 .circleMargin{
     margin-top: 10vh;
+    display: flex;
+    justify-content: space-around;
 }
 
 
@@ -358,6 +363,65 @@ p {
     display: block;
     margin: 0 auto;
 }
+.genKids {
+    margin: 50px 0;
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    /* flex-wrap: wrap; */
+        overflow-x: auto;
+}
+.kidCol {
+    width: 300px;
+    justify-content: center;
+}
+.addSubTime {
+    margin:40px 0;
+    display: flex;
+    justify-content:  space-around;
+}
+
+.modal {
+    max-height: 90%;
+  }
+  
+  .modal-form-row {
+    margin-bottom: 0px;
+  }
+  
+/* .scrolling-horiz { */
+    /* #kidOverflow {
+        display: flex;
+        flex-wrap: wrap;
+        overflow-x: auto;
+      } */
+
+/* ~~~~~~ change the scrollbar style ~~~~~~~ */
+::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.9); */
+    border-radius: 10px;
+    /* background-color: #444444; */
+  }
+  
+  ::-webkit-scrollbar {
+    width: 15px;
+    background-color: #F5F5F5;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #69F0AE;
+    -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.9)
+    /* background-image: -webkit-linear-gradient(90deg,
+        transparent,
+        rgba(0, 0, 0, 0.4) 50%,
+        transparent,
+        transparent) */
+  }
+  /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
 @media only screen and (max-width: 1480px) {
     #imgController{
         margin-right: 4vw;
@@ -384,17 +448,17 @@ p {
     .screenadaptparrent{
         margin-left: 1vw;
     }
-    .spanCircleParrent{
+    /* .spanCircleParrent{
         margin: 0 auto;
         float: left;
         position: relative;
         margin-left: 3vw;   
-    }
+    } */
 }
 @media only screen and (max-width: 980px){
-    .spanCircleParrent{
+    /* .spanCircleParrent{
         margin-left: 5vw;
-    }
+    } */
 }
 
 @media only screen and (max-width: 900px){
@@ -414,7 +478,7 @@ p {
     }
 }
 @media only screen and (max-width: 850px){
-    .spanCircleParrent{
+    /* .spanCircleParrent{
         margin-left: 1vw;
         height: 25vw;
         width: 25vw;
@@ -429,11 +493,11 @@ p {
         height: 25vw;
         width: 25vw;
         line-height: 25vw;
-    }
-    #imgPig{
+    } */
+    /* #imgPig{
         height: 25vw;
         width: 25vw;
-    }
+    } */
     .spanOvalBarTitle{
         width: 70%;
     }

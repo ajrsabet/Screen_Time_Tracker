@@ -48,6 +48,7 @@ width: 100%;
     margin-top: 20vh;
   
 }
+
 /* .spanCircleParrent {
     height: 30vh;
     width: 30vh;
@@ -116,6 +117,7 @@ width: 100%;
     margin-left: 5%;
     
 } */
+
 
 .spanCircleKidPurple {
 
@@ -203,7 +205,6 @@ width: 100%;
     width: 90%;
     justify-content: center;
     margin: 40px auto;
-    height: 52px;
     text-align: center;
     color: black;
 }
@@ -310,23 +311,24 @@ margin: 0;
     margin-left: 2vw;
 }
 .figureSize{
-    width: 60%;
+    height: 100px;
     margin: 0 auto;
     display: block;
+    margin-top: 25px;
 }
 .figureSize1{
-    width: 22%;
+    height: 75px;
     margin: 0 auto;
     display: block;
-    margin-top: 4vh;
+    margin-top: 50px;
 }
-.figureSize2{
-    width: 35%;
-    margin: 0 auto;
-    display: block;
-    margin-top: 4vh;
 
+.hvr-bob {
+    margin-left: 20px;
 }
+
+
+
 .noPadding{
     padding: 0;
 }
@@ -372,7 +374,6 @@ p {
 }
 .kidCol {
     width: 300px;
-    /* display: flex; */
     justify-content: center;
 }
 .addSubTime {
@@ -381,6 +382,14 @@ p {
     justify-content:  space-around;
 }
 
+.modal {
+    max-height: 90%;
+  }
+  
+  .modal-form-row {
+    margin-bottom: 0px;
+  }
+  
 /* .scrolling-horiz { */
     /* #kidOverflow {
         display: flex;

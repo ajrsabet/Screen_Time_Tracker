@@ -34,11 +34,51 @@
       </nav>
     </nav>
 
+
+
+
     <div class="container">
       <div class="genKids row">
-          <!------------------ Kids DOM here ----------------------->
-        </div>
+        <!-------------- Kids DOM added here ----------------->
+      </div>
+      
 
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light green accent-2 black-text btn modal-trigger" href="#modal1">Add Kid</a>
+
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Add a kid</h4>
+
+      <div class="row">
+        <form class="col s12">
+          <div class="row modal-form-row">
+            <div class="input-field col s12">
+              <input id="kid-name" type="text" class="validate">
+              <label for="kid-name">Kids First Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="kid-age" type="number" class="validate">
+              <label for="kid-age">Kids Age</label>
+            </div>
+          </div>       
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="allowence-rate" type="number" class="materialize-textarea validate"></textarea>
+              <label for="allowence-rate">Allowence Rate/hour (example $6)</label>
+            </div>
+          </div>             
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a class=" modal-action modal-close waves-effect green accent-2 btn-flat">Submit</a>
+    </div>
+  </div>
         <!-- <div class="row statsTopSpacing">
         <div class="col s1"></div>
         <div class="col s5 hvr-bob">
